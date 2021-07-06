@@ -11,4 +11,7 @@ AUTOTUNE = tf.data.experimental.AUTOTUNE
 
 class CUB_dataset(object):
     def __init__(self, is_training=True, data_dir=None, pretrained=False, arch=None,):
-        """Create  TFRecord files from Raw Images and Create an
+        """Create  TFRecord files from Raw Images and Create an input from TFRecord files.
+        Args:
+          is_training: `bool` for whether the input is for training
+          data_dir: `str` for the directo
