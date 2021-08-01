@@ -16,4 +16,10 @@ class CUB_dataset(object):
           is_training: `bool` for whether the input is for training
           data_dir: `str` for the directory of the training and validation data;
               if 'null' (the literal string 'null') or implicitly False
-              then construct a null pipeline, 
+              then construct a null pipeline, consisting of empty images
+              and blank labels.
+        """
+        super(CUB_dataset, self).__init__()
+        IMAGESIZE = 448
+        self.is_training = is_training
+       
