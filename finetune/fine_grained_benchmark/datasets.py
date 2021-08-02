@@ -22,4 +22,9 @@ class CUB_dataset(object):
         super(CUB_dataset, self).__init__()
         IMAGESIZE = 448
         self.is_training = is_training
-       
+        self.data_dir = data_dir
+        self.pretrained = pretrained
+        self.arch = arch
+
+        def preprocess_train_image_randomflip(image_bytes):
+            shape = tf.imag
