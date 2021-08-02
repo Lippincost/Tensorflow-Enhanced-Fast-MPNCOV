@@ -27,4 +27,8 @@ class CUB_dataset(object):
         self.arch = arch
 
         def preprocess_train_image_randomflip(image_bytes):
-            shape = tf.imag
+            shape = tf.image.extract_jpeg_shape(image_bytes)
+            image_height = shape[0]
+            image_width = shape[1]
+
+            padded_center_crop_size = tf.cast(tf.minimum(image_height
