@@ -39,4 +39,7 @@ class CUB_dataset(object):
                                     padded_center_crop_size, padded_center_crop_size])
             image = tf.image.decode_and_crop_jpeg(image_bytes, crop_window, channels=3)
             image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
- 
+            image = tf.image.random_flip_left_right(image)
+            if self.pretrained and self.arch.startswith('vgg'):
+                # RGB==>BGR for VGG16
+         
