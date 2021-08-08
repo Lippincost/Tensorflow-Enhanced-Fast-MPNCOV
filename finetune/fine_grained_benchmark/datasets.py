@@ -36,4 +36,7 @@ class CUB_dataset(object):
             offset_height = ((image_height - padded_center_crop_size) + 1) // 2
             offset_width = ((image_width - padded_center_crop_size) + 1) // 2
             crop_window = tf.stack([offset_height, offset_width,
-                                    padded_center_crop_size, padde
+                                    padded_center_crop_size, padded_center_crop_size])
+            image = tf.image.decode_and_crop_jpeg(image_bytes, crop_window, channels=3)
+            image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
+ 
