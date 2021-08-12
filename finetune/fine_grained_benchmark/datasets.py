@@ -50,4 +50,10 @@ class CUB_dataset(object):
                 std = [0.229 * 255, 0.224 * 255, 0.225 * 255]
             if mean is not None:
                 image = tf.subtract(image, mean)
-       
+            if std is not None:
+                image = tf.divide(image, std)
+
+            return image
+
+        def preprocess_val_image_flip(image_bytes):
+            shape = tf.image.ext
