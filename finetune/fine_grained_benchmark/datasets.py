@@ -56,4 +56,8 @@ class CUB_dataset(object):
             return image
 
         def preprocess_val_image_flip(image_bytes):
-            shape = tf.image.ext
+            shape = tf.image.extract_jpeg_shape(image_bytes)
+            image_height = shape[0]
+            image_width = shape[1]
+
+            padded_center_crop_size = tf.cast(tf.minimum(image_height, image_width), 
