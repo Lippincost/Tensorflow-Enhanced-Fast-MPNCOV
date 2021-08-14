@@ -60,4 +60,7 @@ class CUB_dataset(object):
             image_height = shape[0]
             image_width = shape[1]
 
-            padded_center_crop_size = tf.cast(tf.minimum(image_height, image_width), 
+            padded_center_crop_size = tf.cast(tf.minimum(image_height, image_width), tf.int32)
+
+            offset_height = ((image_height - padded_center_crop_size) + 1) // 2
+            offset_width = ((image_width - padded_center_crop_siz
