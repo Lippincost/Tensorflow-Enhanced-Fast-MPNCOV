@@ -67,4 +67,8 @@ class CUB_dataset(object):
             crop_window = tf.stack([offset_height, offset_width,
                                     padded_center_crop_size, padded_center_crop_size])
             image = tf.image.decode_and_crop_jpeg(image_bytes, crop_window, channels=3)
-            image = tf.image.resize(image, [IMAGESIZE, IMAG
+            image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
+            if self.pretrained and self.arch.startswith('vgg'):
+                # RGB==>BGR for VGG16
+                image = image[..., ::-1]
+                mean = [0.406 *
