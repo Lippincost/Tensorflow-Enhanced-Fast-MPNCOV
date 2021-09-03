@@ -75,4 +75,8 @@ class CUB_dataset(object):
                 std = None
             else:
                 mean = [0.485 * 255, 0.456 * 255, 0.406 * 255]
-                std = [
+                std = [0.229 * 255, 0.224 * 255, 0.225 * 255]
+
+            image_flip = tf.image.flip_left_right(image)
+            image = tf.stack([image, image_flip])
+            if mean is 
