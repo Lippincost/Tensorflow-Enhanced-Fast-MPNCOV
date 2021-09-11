@@ -92,4 +92,6 @@ class CUB_dataset(object):
             preprocess_image = preprocess_train_image_randomflip
 
         else:
-            dataset_dir = os.path.join(self.
+            dataset_dir = os.path.join(self.data_dir, 'val')
+            tfrecord_filename = os.path.join(self.data_dir, 'val.tfrec')
+            label_filename = os.path.join(self.data_dir, 'val_
