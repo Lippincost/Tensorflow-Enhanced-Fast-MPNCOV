@@ -94,4 +94,8 @@ class CUB_dataset(object):
         else:
             dataset_dir = os.path.join(self.data_dir, 'val')
             tfrecord_filename = os.path.join(self.data_dir, 'val.tfrec')
-            label_filename = os.path.join(self.data_dir, 'val_
+            label_filename = os.path.join(self.data_dir, 'val_label.mat')
+            preprocess_image = preprocess_val_image_flip
+
+        # generate tfrecord files
+        if not os.path.exists(tfrecord_filename):
