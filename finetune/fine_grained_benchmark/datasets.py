@@ -102,4 +102,8 @@ class CUB_dataset(object):
             species = sorted(os.listdir(dataset_dir))
             img_path_id = []
             for i in range(len(species)):
-                s_dir = os.
+                s_dir = os.path.join(dataset_dir, species[i])
+                # 遍历目录下的所有图片
+                for filename in os.listdir(s_dir):
+                    # 获取文件的路径
+            
