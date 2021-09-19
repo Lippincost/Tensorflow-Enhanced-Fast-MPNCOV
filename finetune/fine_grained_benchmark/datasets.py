@@ -108,4 +108,8 @@ class CUB_dataset(object):
                     # 获取文件的路径
                     file_path = os.path.join(s_dir, filename)
                     if file_path.endswith("jpg") and os.path.exists(file_path):
-                        img_path_id.
+                        img_path_id.append([file_path, i])
+            img_path_id = np.asarray(img_path_id)
+            np.random.shuffle(img_path_id)
+            images = img_path_id[:, 0].tolist()
+          
