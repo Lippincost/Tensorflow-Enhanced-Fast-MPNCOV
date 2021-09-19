@@ -132,4 +132,6 @@ class CUB_dataset(object):
         return self.ds.batch(batchsize).prefetch(buffer_size=AUTOTUNE)
 
 
-class Aircrafts_dataset
+class Aircrafts_dataset(object):
+    def __init__(self, is_training=True, data_dir=None, pretrained=False, arch=None):
+        """Create  TFRecord files from Raw Images and Create an
