@@ -112,4 +112,7 @@ class CUB_dataset(object):
             img_path_id = np.asarray(img_path_id)
             np.random.shuffle(img_path_id)
             images = img_path_id[:, 0].tolist()
-          
+            labels = np.int64(img_path_id[:, 1])
+            sio.savemat(label_filename, {'label': labels})
+
+            tfrec = tf.data.experimental.TFRecordWriter(tfrecord_
