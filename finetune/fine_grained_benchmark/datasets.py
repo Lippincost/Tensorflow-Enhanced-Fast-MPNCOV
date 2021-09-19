@@ -106,4 +106,6 @@ class CUB_dataset(object):
                 # 遍历目录下的所有图片
                 for filename in os.listdir(s_dir):
                     # 获取文件的路径
-            
+                    file_path = os.path.join(s_dir, filename)
+                    if file_path.endswith("jpg") and os.path.exists(file_path):
+                        img_path_id.
