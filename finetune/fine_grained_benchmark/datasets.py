@@ -115,4 +115,9 @@ class CUB_dataset(object):
             labels = np.int64(img_path_id[:, 1])
             sio.savemat(label_filename, {'label': labels})
 
-            tfrec = tf.data.experimental.TFRecordWriter(tfrecord_
+            tfrec = tf.data.experimental.TFRecordWriter(tfrecord_filename)
+            image_ds = tf.data.Dataset.from_tensor_slices(images).map(tf.io.read_file)
+            tfrec.write(image_ds)
+
+        labels = sio.loadmat(label_filename)['label'][0]
+   
