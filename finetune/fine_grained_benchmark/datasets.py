@@ -127,4 +127,9 @@ class CUB_dataset(object):
         self.num_samples = len(labels)
 
     def make_source_dataset(self, batchsize):
-        if self.
+        if self.is_training:
+            self.ds = self.ds.shuffle(buffer_size=int(0.4*self.num_samples))
+        return self.ds.batch(batchsize).prefetch(buffer_size=AUTOTUNE)
+
+
+class Aircrafts_dataset
