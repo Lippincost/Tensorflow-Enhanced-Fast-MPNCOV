@@ -140,4 +140,9 @@ class Aircrafts_dataset(object):
           data_dir: `str` for the directory of the training and validation data;
               if 'null' (the literal string 'null') or implicitly False
               then construct a null pipeline, consisting of empty images
-      
+              and blank labels.
+        """
+        super(Aircrafts_dataset, self).__init__()
+        IMAGESIZE = 512
+        self.is_training = is_training
+        self.data_dir 
