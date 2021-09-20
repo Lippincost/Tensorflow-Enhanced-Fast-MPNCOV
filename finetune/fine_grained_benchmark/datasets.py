@@ -145,4 +145,9 @@ class Aircrafts_dataset(object):
         super(Aircrafts_dataset, self).__init__()
         IMAGESIZE = 512
         self.is_training = is_training
-        self.data_dir 
+        self.data_dir = data_dir
+        self.pretrained = pretrained
+        self.arch = arch
+
+        def preprocess_train_image_randomflip(image_bytes):
+            image = tf.image.deco
