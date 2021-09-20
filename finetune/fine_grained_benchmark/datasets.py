@@ -150,4 +150,7 @@ class Aircrafts_dataset(object):
         self.arch = arch
 
         def preprocess_train_image_randomflip(image_bytes):
-            image = tf.image.deco
+            image = tf.image.decode_jpeg(image_bytes, channels=3)
+            image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
+            image = tf.image.central_crop(image, 448.0 / IMAGESIZE)
+        
