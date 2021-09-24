@@ -153,4 +153,7 @@ class Aircrafts_dataset(object):
             image = tf.image.decode_jpeg(image_bytes, channels=3)
             image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
             image = tf.image.central_crop(image, 448.0 / IMAGESIZE)
-        
+            image = tf.image.random_flip_left_right(image)
+            if self.pretrained and self.arch.startswith('vgg'):
+                # RGB==>BGR for VGG16
+                imag
