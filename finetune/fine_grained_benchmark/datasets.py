@@ -160,4 +160,7 @@ class Aircrafts_dataset(object):
                 mean = [0.406 * 255, 0.456 * 255, 0.485 * 255]
                 std = None
             else:
-                mean = [0.485 
+                mean = [0.485 * 255, 0.456 * 255, 0.406 * 255]
+                std = [0.229 * 255, 0.224 * 255, 0.225 * 255]
+            if mean is not None:
+                image = tf.subtract(imag
