@@ -156,4 +156,8 @@ class Aircrafts_dataset(object):
             image = tf.image.random_flip_left_right(image)
             if self.pretrained and self.arch.startswith('vgg'):
                 # RGB==>BGR for VGG16
-                imag
+                image = image[..., ::-1]
+                mean = [0.406 * 255, 0.456 * 255, 0.485 * 255]
+                std = None
+            else:
+                mean = [0.485 
