@@ -171,4 +171,7 @@ class Aircrafts_dataset(object):
         def preprocess_val_image_flip(image_bytes):
             image = tf.image.decode_jpeg(image_bytes, channels=3)
             image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
-            image = tf
+            image = tf.image.central_crop(image, 448.0 / IMAGESIZE)
+            if self.pretrained and self.arch.startswith('vgg'):
+                # RGB==>BGR for VGG16
+                
