@@ -169,3 +169,6 @@ class Aircrafts_dataset(object):
             return image
 
         def preprocess_val_image_flip(image_bytes):
+            image = tf.image.decode_jpeg(image_bytes, channels=3)
+            image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
+            image = tf
