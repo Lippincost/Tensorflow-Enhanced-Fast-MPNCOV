@@ -174,4 +174,8 @@ class Aircrafts_dataset(object):
             image = tf.image.central_crop(image, 448.0 / IMAGESIZE)
             if self.pretrained and self.arch.startswith('vgg'):
                 # RGB==>BGR for VGG16
-                
+                image = image[..., ::-1]
+                mean = [0.406 * 255, 0.456 * 255, 0.485 * 255]
+                std = None
+            else:
+                mean = [0.485 * 255, 0.456 * 25
