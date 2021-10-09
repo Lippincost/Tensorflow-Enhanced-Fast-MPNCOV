@@ -187,4 +187,8 @@ class Aircrafts_dataset(object):
                 image = tf.subtract(image, mean)
             if std is not None:
                 image = tf.divide(image, std)
- 
+            return image
+
+        if self.is_training:
+            dataset_dir = os.path.join(self.data_dir, 'train')
+            tfrecord_filename = os.path.join(self.data_di
