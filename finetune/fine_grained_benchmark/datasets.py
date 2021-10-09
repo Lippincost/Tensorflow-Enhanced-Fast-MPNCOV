@@ -182,4 +182,9 @@ class Aircrafts_dataset(object):
                 std = [0.229 * 255, 0.224 * 255, 0.225 * 255]
 
             image_flip = tf.image.flip_left_right(image)
-            image = tf.stack([image, image_f
+            image = tf.stack([image, image_flip])
+            if mean is not None:
+                image = tf.subtract(image, mean)
+            if std is not None:
+                image = tf.divide(image, std)
+ 
