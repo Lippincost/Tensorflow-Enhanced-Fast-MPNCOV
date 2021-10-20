@@ -202,4 +202,9 @@ class Aircrafts_dataset(object):
             preprocess_image = preprocess_val_image_flip
 
         if not os.path.exists(tfrecord_filename):
-            species = sorted(os.listdir(dataset_
+            species = sorted(os.listdir(dataset_dir))
+            img_path_id = []
+            for i in range(len(species)):
+                s_dir = os.path.join(dataset_dir, species[i])
+                # 遍历目录下的所有图片
+     
