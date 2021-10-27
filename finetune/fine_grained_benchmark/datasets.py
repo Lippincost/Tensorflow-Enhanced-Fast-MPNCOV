@@ -212,4 +212,8 @@ class Aircrafts_dataset(object):
                     file_path = os.path.join(s_dir, filename)
                     if file_path.endswith("jpg") and os.path.exists(file_path):
                         img_path_id.append([file_path, i])
-            img_path_id = np.asarray(img_pat
+            img_path_id = np.asarray(img_path_id)
+            np.random.shuffle(img_path_id)
+            images = img_path_id[:, 0].tolist()
+            labels = np.int64(img_path_id[:, 1])
+            sio.savemat(label_f
