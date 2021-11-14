@@ -223,4 +223,6 @@ class Aircrafts_dataset(object):
             tfrec.write(image_ds)
 
         labels = sio.loadmat(label_filename)['label'][0]
-        image_ds = tf.data.TFRecordDataset(tfrecord_fil
+        image_ds = tf.data.TFRecordDataset(tfrecord_filename).map(preprocess_image)
+        label_ds = tf.data.Dataset.from_tensor_slices(tf.cast(labels, tf.int64))
+        self.ds = tf.data.Dataset.zip((image_ds,
