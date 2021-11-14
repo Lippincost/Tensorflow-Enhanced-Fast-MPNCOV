@@ -234,4 +234,7 @@ class Aircrafts_dataset(object):
         return self.ds.batch(batchsize).prefetch(buffer_size=AUTOTUNE)
 
 class Cars_dataset(object):
-    def __init__(self, is_training=True, data_dir
+    def __init__(self, is_training=True, data_dir=None, pretrained=False, arch=None):
+        """Create  TFRecord files from Raw Images and Create an input from TFRecord files.
+        Args:
+          is_training: `bool` for whether
