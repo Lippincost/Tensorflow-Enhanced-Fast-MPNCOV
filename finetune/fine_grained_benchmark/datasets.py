@@ -250,4 +250,6 @@ class Cars_dataset(object):
         self.pretrained = pretrained
         self.arch = arch
 
-        de
+        def preprocess_train_image_randomflip(image_bytes):
+            image = tf.image.decode_jpeg(image_bytes, channels=3)
+            image = tf.image.resize(image, [IMAGESIZE, I
