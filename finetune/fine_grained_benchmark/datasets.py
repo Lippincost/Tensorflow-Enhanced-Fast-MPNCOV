@@ -252,4 +252,7 @@ class Cars_dataset(object):
 
         def preprocess_train_image_randomflip(image_bytes):
             image = tf.image.decode_jpeg(image_bytes, channels=3)
-            image = tf.image.resize(image, [IMAGESIZE, I
+            image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
+            image = tf.image.random_flip_left_right(image)
+            if self.pretrained and self.arch.startswith('vgg'):
+                # RGB==>BGR 
