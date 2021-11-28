@@ -255,4 +255,9 @@ class Cars_dataset(object):
             image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
             image = tf.image.random_flip_left_right(image)
             if self.pretrained and self.arch.startswith('vgg'):
-                # RGB==>BGR 
+                # RGB==>BGR for VGG16
+                image = image[..., ::-1]
+                mean = [0.406 * 255, 0.456 * 255, 0.485 * 255]
+                std = None
+            else:
+                
