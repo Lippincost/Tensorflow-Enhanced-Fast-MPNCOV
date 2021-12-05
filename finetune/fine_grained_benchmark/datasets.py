@@ -274,4 +274,8 @@ class Cars_dataset(object):
             if self.pretrained and self.arch.startswith('vgg'):
                 # RGB==>BGR for VGG16
                 image = image[..., ::-1]
-                mean = [0.406 * 255, 0.456 * 255
+                mean = [0.406 * 255, 0.456 * 255, 0.485 * 255]
+                std = None
+            else:
+                mean = [0.485 * 255, 0.456 * 255, 0.406 * 255]
+                std = [0.229 * 255, 0.224 * 255,
