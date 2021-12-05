@@ -271,4 +271,7 @@ class Cars_dataset(object):
         def preprocess_val_image_flip(image_bytes):
             image = tf.image.decode_jpeg(image_bytes, channels=3)
             image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
-            if self.pret
+            if self.pretrained and self.arch.startswith('vgg'):
+                # RGB==>BGR for VGG16
+                image = image[..., ::-1]
+                mean = [0.406 * 255, 0.456 * 255
