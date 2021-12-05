@@ -268,4 +268,7 @@ class Cars_dataset(object):
                 image = tf.divide(image, std)
             return image
 
-        def preprocess_val_image_flip(i
+        def preprocess_val_image_flip(image_bytes):
+            image = tf.image.decode_jpeg(image_bytes, channels=3)
+            image = tf.image.resize(image, [IMAGESIZE, IMAGESIZE])
+            if self.pret
