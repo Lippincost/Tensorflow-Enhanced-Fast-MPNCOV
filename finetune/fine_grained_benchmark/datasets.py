@@ -288,4 +288,7 @@ class Cars_dataset(object):
                 image = tf.divide(image, std)
             return image
 
-        if self.is_trainin
+        if self.is_training:
+            dataset_dir = os.path.join(self.data_dir, 'train')
+            tfrecord_filename = os.path.join(self.data_dir, 'train.tfrec')
+            label_filename = os.
