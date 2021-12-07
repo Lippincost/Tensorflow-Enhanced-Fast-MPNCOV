@@ -294,4 +294,7 @@ class Cars_dataset(object):
             label_filename = os.path.join(self.data_dir, 'train_label.mat')
             preprocess_image = preprocess_train_image_randomflip
         else:
-            dataset_dir = os.path.join(self.
+            dataset_dir = os.path.join(self.data_dir, 'val')
+            tfrecord_filename = os.path.join(self.data_dir, 'val.tfrec')
+            label_filename = os.path.join(self.data_dir, 'val_label.mat')
+        
