@@ -297,4 +297,8 @@ class Cars_dataset(object):
             dataset_dir = os.path.join(self.data_dir, 'val')
             tfrecord_filename = os.path.join(self.data_dir, 'val.tfrec')
             label_filename = os.path.join(self.data_dir, 'val_label.mat')
-        
+            preprocess_image = preprocess_val_image_flip
+
+        if not os.path.exists(tfrecord_filename):
+            species = sorted(os.listdir(dataset_dir))
+            img_path_id = []
