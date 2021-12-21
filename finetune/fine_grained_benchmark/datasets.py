@@ -311,4 +311,9 @@ class Cars_dataset(object):
                     if file_path.endswith("jpg") and os.path.exists(file_path):
                         img_path_id.append([file_path, i])
             img_path_id = np.asarray(img_path_id)
-            np.random.
+            np.random.shuffle(img_path_id)
+            images = img_path_id[:, 0].tolist()
+            labels = np.int64(img_path_id[:, 1])
+            sio.savemat(label_filename, {'label': labels})
+
+ 
