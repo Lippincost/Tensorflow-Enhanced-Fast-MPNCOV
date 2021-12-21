@@ -305,4 +305,7 @@ class Cars_dataset(object):
             for i in range(len(species)):
                 s_dir = os.path.join(dataset_dir, species[i])
                 # 遍历目录下的所有图片
-  
+                for filename in os.listdir(s_dir):
+                    # 获取文件的路径
+                    file_path = os.path.join(s_dir, filename)
+                    if file_path.
