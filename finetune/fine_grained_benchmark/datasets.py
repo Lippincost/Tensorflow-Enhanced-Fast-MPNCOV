@@ -324,4 +324,8 @@ class Cars_dataset(object):
         image_ds = tf.data.TFRecordDataset(tfrecord_filename).map(preprocess_image)
         label_ds = tf.data.Dataset.from_tensor_slices(tf.cast(labels, tf.int64))
         self.ds = tf.data.Dataset.zip((image_ds, label_ds))
-      
+        self.num_samples = len(labels)
+
+    def make_source_dataset(self, batchsize):
+        if self.is_training:
+            self.ds = self.ds.shuffle(buffer_size=int(0.4*s
