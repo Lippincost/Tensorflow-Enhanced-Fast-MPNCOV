@@ -328,4 +328,5 @@ class Cars_dataset(object):
 
     def make_source_dataset(self, batchsize):
         if self.is_training:
-            self.ds = self.ds.shuffle(buffer_size=int(0.4*s
+            self.ds = self.ds.shuffle(buffer_size=int(0.4*self.num_samples))
+        return self.ds.batch(batchsize).prefetch(buffer_size=AUTOTUNE)
