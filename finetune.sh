@@ -16,4 +16,10 @@ Modify the following settings as you wish !
 
 #You can also add your own network in src/network
 arch=mpncovresnet101
-#********************
+#*********************************************
+
+#***************global method****************
+#Our code provides some global method at the end
+#of network:
+#GAvP (global average pooling),
+#MPNCO
