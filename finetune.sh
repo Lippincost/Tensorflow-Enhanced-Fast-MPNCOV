@@ -22,4 +22,9 @@ arch=mpncovresnet101
 #Our code provides some global method at the end
 #of network:
 #GAvP (global average pooling),
-#MPNCO
+#MPNCOV (matrix power normalized cov pooling),
+#...
+#You can also add your own method in src/representation
+image_representation=MPNCOV
+# short description of method
+description=reproduc
