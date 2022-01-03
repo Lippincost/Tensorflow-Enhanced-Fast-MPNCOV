@@ -27,4 +27,10 @@ arch=mpncovresnet101
 #You can also add your own method in src/representation
 image_representation=MPNCOV
 # short description of method
-description=reproduc
+description=reproduce
+#*********************************************
+
+#*******************Dataset*******************
+#Choose the dataset folder
+benchmark=Aircrafts
+datadir=/home/rudy/Downlo
