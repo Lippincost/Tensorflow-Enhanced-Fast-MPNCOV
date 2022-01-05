@@ -33,4 +33,11 @@ description=reproduce
 #*******************Dataset*******************
 #Choose the dataset folder
 benchmark=Aircrafts
-datadir=/home/rudy/Downlo
+datadir=/home/rudy/Downloads
+dataset=$datadir/$benchmark
+num_classes=100
+train_num=6667
+val_num=3333
+#*********************************************
+
+#****************Hyper-paramet
