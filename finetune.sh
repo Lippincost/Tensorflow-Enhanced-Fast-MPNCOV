@@ -47,4 +47,14 @@ val_num=3333
 freeze_layer=0
 # Batch size
 batchsize=8
-# The number of 
+# The number of total epochs for training
+epochs=20
+start_epoch=0
+# The inital learning rate
+# decreased by step method
+lr=1e-3
+learning_rate_schedule=20
+learning_rate_multiplier=1
+
+weight_decay=1e-4
+cla
