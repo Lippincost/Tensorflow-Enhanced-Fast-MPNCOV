@@ -40,4 +40,11 @@ train_num=6667
 val_num=3333
 #*********************************************
 
-#****************Hyper-paramet
+#****************Hyper-parameters*************
+
+# Freeze the layers before a certain layer.
+# Freeze the layers before a certain layer.
+freeze_layer=0
+# Batch size
+batchsize=8
+# The number of 
