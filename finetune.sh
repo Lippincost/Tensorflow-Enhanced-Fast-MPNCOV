@@ -57,4 +57,7 @@ learning_rate_schedule=20
 learning_rate_multiplier=1
 
 weight_decay=1e-4
-cla
+classifier_factor=5
+#*********************************************
+echo "Start finetuning!"
+exp_dir=Results/Finetune-$benchmark-$arch-$image_representation
