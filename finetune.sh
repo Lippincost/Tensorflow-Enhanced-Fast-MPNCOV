@@ -60,4 +60,20 @@ weight_decay=1e-4
 classifier_factor=5
 #*********************************************
 echo "Start finetuning!"
-exp_dir=Results/Finetune-$benchmark-$arch-$image_representation
+exp_dir=Results/Finetune-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
+if [ ! -d  "Results" ]; then
+
+mkdir Results
+
+fi
+
+
+if [ ! -d  "$exp_dir" ]; then
+
+mkdir $exp_dir
+
+
+fi
+
+cp finetune.sh $exp_dir
+python
