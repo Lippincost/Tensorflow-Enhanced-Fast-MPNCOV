@@ -81,4 +81,8 @@ python main_multi_GPU.py $dataset\
                --pretrained\
                --arch $arch\
                --print-freq 100\
-        
+               --epochs $epochs\
+               --start-epoch $start_epoch\
+               --learning-rate $lr\
+               --learning-rate-schedule $learning_rate_schedule\
+               --l
