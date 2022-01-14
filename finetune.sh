@@ -76,4 +76,9 @@ mkdir $exp_dir
 fi
 
 cp finetune.sh $exp_dir
-python
+python main_multi_GPU.py $dataset\
+               --benchmark $benchmark\
+               --pretrained\
+               --arch $arch\
+               --print-freq 100\
+        
