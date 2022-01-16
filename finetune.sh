@@ -85,4 +85,8 @@ python main_multi_GPU.py $dataset\
                --start-epoch $start_epoch\
                --learning-rate $lr\
                --learning-rate-schedule $learning_rate_schedule\
-               --l
+               --learning-rate-multiplier $learning_rate_multiplier\
+               -j 8\
+               -b $batchsize\
+               --num-classes $num_classes\
+               --tra
