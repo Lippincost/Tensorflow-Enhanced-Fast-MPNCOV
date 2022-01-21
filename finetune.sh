@@ -93,4 +93,7 @@ python main_multi_GPU.py $dataset\
                --val-num $val_num\
                --representation $image_representation\
                --freezed-layer $freeze_layer\
-               --fc-fa
+               --fc-factor $classifier_factor\
+               --benchmark $benchmark\
+               --exp-dir $exp_dir
+echo "Done!"
