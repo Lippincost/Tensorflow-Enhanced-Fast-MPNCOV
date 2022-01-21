@@ -89,4 +89,8 @@ python main_multi_GPU.py $dataset\
                -j 8\
                -b $batchsize\
                --num-classes $num_classes\
-               --tra
+               --train-num $train_num\
+               --val-num $val_num\
+               --representation $image_representation\
+               --freezed-layer $freeze_layer\
+               --fc-fa
