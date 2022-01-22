@@ -28,4 +28,6 @@ class Newmodel(Basemodel):
                     self.classifier.pop()
                     self.classifier.add(tf.keras.layers.Dense(num_classes))
                 else:
-            
+                    self.classifier = tf.keras.layers.Dense(num_classes)
+            else:
+                self.classifier = tf.keras.layers.Dense(num_classes, name='classifi
