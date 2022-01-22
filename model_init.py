@@ -20,4 +20,8 @@ class Newmodel(Basemodel):
             representation_method = representation['function']
             representation.pop('function')
             representation_args = representation
-            representation_args['input_dim'] = self.
+            representation_args['input_dim'] = self.representation_dim
+            self.representation = representation_method(**representation_args)
+
+            if not self.pretrained:
+                if modeltype
