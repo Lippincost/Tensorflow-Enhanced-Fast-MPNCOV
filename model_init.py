@@ -1,3 +1,9 @@
 from src.network import *
 import tensorflow as tf
-im
+import numpy as np
+import warnings
+__all__ = ['Newmodel', 'get_model']
+
+class Newmodel(Basemodel):
+    """replace the image representation method and classifier
+
