@@ -30,4 +30,9 @@ class Newmodel(Basemodel):
                 else:
                     self.classifier = tf.keras.layers.Dense(num_classes)
             else:
-                self.classifier = tf.keras.layers.Dense(num_classes, name='classifi
+                self.classifier = tf.keras.layers.Dense(num_classes, name='classifier')
+
+        else:
+            if modeltype.startswith('vgg'):
+                self.classifier.pop()
+                self.classifier.add(tf.keras.la
