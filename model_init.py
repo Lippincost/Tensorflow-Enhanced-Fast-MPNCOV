@@ -24,4 +24,8 @@ class Newmodel(Basemodel):
             self.representation = representation_method(**representation_args)
 
             if not self.pretrained:
-                if modeltype
+                if modeltype.startswith('vgg'):
+                    self.classifier.pop()
+                    self.classifier.add(tf.keras.layers.Dense(num_classes))
+                else:
+            
