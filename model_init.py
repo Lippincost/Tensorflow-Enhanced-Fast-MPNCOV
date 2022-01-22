@@ -11,4 +11,7 @@ class Newmodel(Basemodel):
        modeltype: model archtecture
        representation: image representation method
        num_classes: the number of classes
- 
+       freezed_layer: the end of freezed layers in network
+       pretrained: whether use pretrained weights or not
+    """
+    def __init__(self, modeltype, representation, num_classes
