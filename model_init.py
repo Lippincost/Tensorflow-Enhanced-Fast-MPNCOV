@@ -14,4 +14,7 @@ class Newmodel(Basemodel):
        freezed_layer: the end of freezed layers in network
        pretrained: whether use pretrained weights or not
     """
-    def __init__(self, modeltype, representation, num_classes
+    def __init__(self, modeltype, representation, num_classes, freezed_layer, pretrained=False):
+        super(Newmodel, self).__init__(modeltype, pretrained)
+        if representation is not None:
+            representation_method = rep
