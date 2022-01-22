@@ -17,4 +17,7 @@ class Newmodel(Basemodel):
     def __init__(self, modeltype, representation, num_classes, freezed_layer, pretrained=False):
         super(Newmodel, self).__init__(modeltype, pretrained)
         if representation is not None:
-            representation_method = rep
+            representation_method = representation['function']
+            representation.pop('function')
+            representation_args = representation
+            representation_args['input_dim'] = self.
