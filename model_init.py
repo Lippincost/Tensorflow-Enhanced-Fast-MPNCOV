@@ -35,4 +35,10 @@ class Newmodel(Basemodel):
         else:
             if modeltype.startswith('vgg'):
                 self.classifier.pop()
-                self.classifier.add(tf.keras.la
+                self.classifier.add(tf.keras.layers.Dense(num_classes))
+            else:
+                self.classifier = tf.keras.layers.Dense(num_classes, name='classifier')
+
+
+        if freezed_layer:
+            model_la
