@@ -41,4 +41,10 @@ class Newmodel(Basemodel):
 
 
         if freezed_layer:
-            model_la
+            model_layers = self.features.layers + self.representation.layers + self.classifier.layers
+            for i in range(freezed_layer):
+                model_layers[i].trainable=False
+
+
+
+de
