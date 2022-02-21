@@ -53,4 +53,9 @@ def get_model(modeltype, representation, num_classes, freezed_layer, pretrained=
     # _model.features.trainable = False
     _model(input, training=False)
     _model.features.summary()
-    # _model.re
+    # _model.representation
+    # _model.classifier.summary()
+    _model.summary()
+
+    return _model
+
