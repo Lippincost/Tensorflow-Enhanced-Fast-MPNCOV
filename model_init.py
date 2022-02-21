@@ -48,4 +48,9 @@ class Newmodel(Basemodel):
 
 
 def get_model(modeltype, representation, num_classes, freezed_layer, pretrained=False):
-    _model = Newmodel(modeltype, representation, num_classes, freezed_layer, pretraine
+    _model = Newmodel(modeltype, representation, num_classes, freezed_layer, pretrained=pretrained)
+    input = tf.random.normal([1,224,224,3])
+    # _model.features.trainable = False
+    _model(input, training=False)
+    _model.features.summary()
+    # _model.re
