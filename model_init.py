@@ -47,4 +47,5 @@ class Newmodel(Basemodel):
 
 
 
-de
+def get_model(modeltype, representation, num_classes, freezed_layer, pretrained=False):
+    _model = Newmodel(modeltype, representation, num_classes, freezed_layer, pretraine
