@@ -26,4 +26,7 @@ class Basemodel(tf.keras.Model):
         self.pretrained = pretrained
         if modeltype.startswith('resnet'):
             basemodel = self._reconstruct_resnet(basemodel)
-        e
+        elif modeltype.startswith('mpncovresnet'):
+            basemodel = self._reconstruct_mpncovresnet(basemodel)
+        elif modeltype.startswith('vgg'):
+            basemodel = self._recons
