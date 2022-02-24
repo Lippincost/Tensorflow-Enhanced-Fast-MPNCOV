@@ -37,4 +37,7 @@ class Basemodel(tf.keras.Model):
         else:
             raise RuntimeError('There is no matching model!')
 
-      
+        self.features = basemodel.features
+        self.representation = basemodel.representation
+        self.classifier = basemodel.classifier
+        self.representation_dim = basemodel.representation
