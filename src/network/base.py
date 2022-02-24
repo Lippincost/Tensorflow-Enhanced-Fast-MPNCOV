@@ -32,4 +32,9 @@ class Basemodel(tf.keras.Model):
             basemodel = self._reconstruct_vgg(basemodel)
         elif modeltype.startswith('cifar_'):
             basemodel = self._reconstruct_cifar_model(basemodel)
-        elif modeltype.startswith(
+        elif modeltype.startswith('mpncov_vgg'):
+            basemodel = self._reconstruct_mpncov_vgg(basemodel)
+        else:
+            raise RuntimeError('There is no matching model!')
+
+      
