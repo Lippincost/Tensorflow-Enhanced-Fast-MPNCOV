@@ -17,3 +17,9 @@ def get_basemodel(modeltype, pretrained=False):
 class Basemodel(tf.keras.Model):
     """Load backbone model and reconstruct it into three part:
        1) feature extractor
+       2) global image representaion
+       3) classifier
+    """
+    def __init__(self, modeltype, pretrained=False):
+        super(Basemodel, self).__init__()
+        basemodel = get_
