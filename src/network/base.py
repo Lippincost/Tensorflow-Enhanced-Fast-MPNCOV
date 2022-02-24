@@ -22,4 +22,8 @@ class Basemodel(tf.keras.Model):
     """
     def __init__(self, modeltype, pretrained=False):
         super(Basemodel, self).__init__()
-        basemodel = get_
+        basemodel = get_basemodel(modeltype, pretrained)
+        self.pretrained = pretrained
+        if modeltype.startswith('resnet'):
+            basemodel = self._reconstruct_resnet(basemodel)
+        e
