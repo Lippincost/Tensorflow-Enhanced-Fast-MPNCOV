@@ -44,4 +44,9 @@ class Basemodel(tf.keras.Model):
 
     def _reconstruct_resnet(self, basemodel):
         model = tf.keras.Model()
-        model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='fe
+        model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='features')
+        model.representation = basemodel.avgpool
+        model.classifier = basemodel.fc
+        model.representation_dim = 2048
+        return model
+
