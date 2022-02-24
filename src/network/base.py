@@ -29,4 +29,7 @@ class Basemodel(tf.keras.Model):
         elif modeltype.startswith('mpncovresnet'):
             basemodel = self._reconstruct_mpncovresnet(basemodel)
         elif modeltype.startswith('vgg'):
-            basemodel = self._recons
+            basemodel = self._reconstruct_vgg(basemodel)
+        elif modeltype.startswith('cifar_'):
+            basemodel = self._reconstruct_cifar_model(basemodel)
+        elif modeltype.startswith(
