@@ -40,4 +40,8 @@ class Basemodel(tf.keras.Model):
         self.features = basemodel.features
         self.representation = basemodel.representation
         self.classifier = basemodel.classifier
-        self.representation_dim = basemodel.representation
+        self.representation_dim = basemodel.representation_dim
+
+    def _reconstruct_resnet(self, basemodel):
+        model = tf.keras.Model()
+        model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='fe
