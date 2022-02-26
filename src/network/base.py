@@ -52,4 +52,7 @@ class Basemodel(tf.keras.Model):
 
     def _reconstruct_mpncovresnet(self, basemodel):
         model = tf.keras.Model()
-        model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='fea
+        model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='features')
+        model.representation = basemodel.MPNCOV
+        model.classifier = basemodel.fc
+        model.representation_dim = model.representatio
