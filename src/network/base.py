@@ -55,4 +55,9 @@ class Basemodel(tf.keras.Model):
         model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='features')
         model.representation = basemodel.MPNCOV
         model.classifier = basemodel.fc
-        model.representation_dim = model.representatio
+        model.representation_dim = model.representation.input_dim
+        return model
+
+    def _reconstruct_vgg(self, basemodel):
+        model = tf.keras.Model()
+        model.features = tf.keras.Sequential(layers=basemod
