@@ -50,3 +50,6 @@ class Basemodel(tf.keras.Model):
         model.representation_dim = 2048
         return model
 
+    def _reconstruct_mpncovresnet(self, basemodel):
+        model = tf.keras.Model()
+        model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='fea
