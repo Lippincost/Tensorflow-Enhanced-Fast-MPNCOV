@@ -69,3 +69,9 @@ class Basemodel(tf.keras.Model):
     def _reconstruct_mpncov_vgg(self, basemodel):
         model = tf.keras.Model()
         model.features = basemodel.features
+        model.representation = basemodel.representation
+        model.classifier = basemodel.classifier
+        model.representation_dim = 512
+        return model
+
+    def _reconst
