@@ -82,4 +82,9 @@ class Basemodel(tf.keras.Model):
         model.representation_dim = model.representation.input_dim
         return model
 
-    def cal
+    def call(self, x, training=None):
+
+        x = self.features(x, training=training)
+        x = self.representation(x, training=training)
+        out = self.classifier(x)
+  
