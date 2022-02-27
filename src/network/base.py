@@ -77,4 +77,9 @@ class Basemodel(tf.keras.Model):
     def _reconstruct_cifar_model(self, basemodel):
         model = tf.keras.Model()
         model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='features')
-        model.representati
+        model.representation = basemodel.layers[-2]
+        model.classifier = basemodel.fc
+        model.representation_dim = model.representation.input_dim
+        return model
+
+    def cal
