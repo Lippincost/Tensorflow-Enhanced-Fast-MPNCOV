@@ -315,3 +315,21 @@ def cifar_mpncovresnet164(pretrained=False, **kwargs):
 
 def cifar_mpncovresnet1001(pretrained=False, **kwargs):
     model = MPNCOV_ResNet_Cifar(bottleneck_block, [111, 111, 111], **kwargs)
+
+    return model
+
+
+def cifar_preact_mpncovresnet110(pretrained=False, **kwargs):
+    model = MPNCOV_PreAct_ResNet_Cifar(PreAct_residual_block, [18, 18, 18], **kwargs)
+    return model
+
+
+def cifar_preact_mpncovresnet164(pretrained=False, **kwargs):
+    model = MPNCOV_PreAct_ResNet_Cifar(PreAct_bottleneck_block, [18, 18, 18], **kwargs)
+    return model
+
+
+def cifar_preact_mpncovresnet1001(pretrained=False, **kwargs):
+    model = MPNCOV_PreAct_ResNet_Cifar(PreAct_bottleneck_block, [111, 111, 111], **kwargs)
+    return model
+
