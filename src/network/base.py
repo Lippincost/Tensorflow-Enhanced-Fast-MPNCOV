@@ -87,4 +87,4 @@ class Basemodel(tf.keras.Model):
         x = self.features(x, training=training)
         x = self.representation(x, training=training)
         out = self.classifier(x)
-  
+        return out
