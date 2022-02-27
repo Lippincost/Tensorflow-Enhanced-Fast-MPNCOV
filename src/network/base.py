@@ -74,4 +74,7 @@ class Basemodel(tf.keras.Model):
         model.representation_dim = 512
         return model
 
-    def _reconst
+    def _reconstruct_cifar_model(self, basemodel):
+        model = tf.keras.Model()
+        model.features = tf.keras.Sequential(layers=basemodel.layers[:-2], name='features')
+        model.representati
