@@ -27,4 +27,12 @@ import numpy as np
 import tensorflow as tf
 import tensorflow.keras.layers as layers
 from ..representation.MPNCOV import *
-import scipy.io as s
+import scipy.io as sio
+
+__all__ = ['MPNCOV_ResNet','mpncovresnet26','mpncovresnet50', 'mpncovresnet101']
+
+BATCH_NORM_DECAY = 0.9
+BATCH_NORM_EPSILON = 1e-5
+
+def conv1X1(filters, stride=1):
+    """1x1 convoluti
