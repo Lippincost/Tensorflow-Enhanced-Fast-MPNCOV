@@ -11,4 +11,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# ==========================================================================
+# ==============================================================================
+"""Contains definitions for the post-activation form of Residual Networks.
+
+Residual networks (ResNets) were proposed in:
+[1] Kaiming He, Xiangyu Zhang, Shaoq
