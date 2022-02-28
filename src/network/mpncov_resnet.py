@@ -15,4 +15,10 @@
 """Contains definitions for the post-activation form of Residual Networks.
 
 Residual networks (ResNets) were proposed in:
-[1] Kaiming He, Xiangyu Zhang, Shaoq
+[1] Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+    Deep Residual Learning for Image Recognition. arXiv:1512.03385
+"""
+
+from __future__ import absolute_import
+from __future__ import division
+f
