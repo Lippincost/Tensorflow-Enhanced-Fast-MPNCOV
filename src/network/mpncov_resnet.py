@@ -21,4 +21,10 @@ Residual networks (ResNets) were proposed in:
 
 from __future__ import absolute_import
 from __future__ import division
-f
+from __future__ import print_function
+
+import numpy as np
+import tensorflow as tf
+import tensorflow.keras.layers as layers
+from ..representation.MPNCOV import *
+import scipy.io as s
