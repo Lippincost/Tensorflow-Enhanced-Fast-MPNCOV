@@ -44,4 +44,12 @@ def conv3X3(filters, stride=1):
     return tf.keras.Sequential([
         layers.ZeroPadding2D(padding=1),
         layers.Conv2D(filters, kernel_size=3, strides=stride, use_bias=False, padding='valid',
-                      kernel_initializer=tf.keras.initializers.VarianceScaling()
+                      kernel_initializer=tf.keras.initializers.VarianceScaling())
+    ])
+
+
+def batch_norm(init_zero=False):
+    if init_zero:
+        gamma_initializer = tf.zeros_initializer()
+    else:
+        gamma_initializer = tf.ones_initializer
