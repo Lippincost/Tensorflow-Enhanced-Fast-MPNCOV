@@ -64,4 +64,8 @@ def batch_norm(init_zero=False):
                                         center=True,
                                         scale=True,
                                         fused=True,
-                                        gamma_initializ
+                                        gamma_initializer=gamma_initializer)
+class downsample_block(tf.keras.Model):
+    expansion = 1
+    def __init__(self, filters, strides=1):
+        super(downsample_block, 
