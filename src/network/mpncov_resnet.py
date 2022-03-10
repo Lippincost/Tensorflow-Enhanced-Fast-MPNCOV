@@ -68,4 +68,8 @@ def batch_norm(init_zero=False):
 class downsample_block(tf.keras.Model):
     expansion = 1
     def __init__(self, filters, strides=1):
-        super(downsample_block, 
+        super(downsample_block, self).__init__()
+        self.downsample_conv = conv1X1(filters, strides)
+        self.downsample_bn = batch_norm(init_zero=False)
+    def call(self, x, training):
+   
