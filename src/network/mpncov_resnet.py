@@ -82,4 +82,8 @@ class residual_block(tf.keras.Model):
     def __init__(self, filters, strides=1, downsample=None):
         super(residual_block, self).__init__()
         self.conv1 = conv3X3(filters=filters, stride=strides)
-        self.bn
+        self.bn1 = batch_norm(init_zero=False)
+        self.relu = layers.ReLU()
+        self.conv2 = conv3X3(filters=filters, stride=1)
+        self.bn2 = batch_norm(init_zero=True)
+        self.downsample 
