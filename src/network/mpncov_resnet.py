@@ -97,4 +97,13 @@ class residual_block(tf.keras.Model):
         out = self.bn2(out, training=training)
 
         if self.downsample is not None:
-            identity
+            identity = self.downsample(x, training=training)
+
+        out += identity
+        out = self.relu(out)
+        return out
+
+class bottleneck_block(tf.keras.Model):
+    expansion = 4
+
+    def __i
