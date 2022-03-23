@@ -120,4 +120,12 @@ class bottleneck_block(tf.keras.Model):
     def call(self, x ,training):
         identity = x
         out = self.conv1(x)
-        out = self.bn1(out, tra
+        out = self.bn1(out, training=training)
+        out = self.relu(out)
+
+
+        out = self.conv2(out)
+        out = self.bn2(out, training=training)
+        out = self.relu(out)
+
+        out = self.conv3(out)
