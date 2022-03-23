@@ -129,3 +129,6 @@ class bottleneck_block(tf.keras.Model):
         out = self.relu(out)
 
         out = self.conv3(out)
+        out = self.bn3(out, training=training)
+        if self.downsample is not None:
+            identity = self.downsample(x, training=training)
