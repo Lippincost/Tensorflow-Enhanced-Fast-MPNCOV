@@ -132,3 +132,11 @@ class bottleneck_block(tf.keras.Model):
         out = self.bn3(out, training=training)
         if self.downsample is not None:
             identity = self.downsample(x, training=training)
+        out += identity
+        out = self.relu(out)
+        return out
+
+
+class MPNCOV_ResNet(tf.keras.Model):
+    def __init__(self, block_fn, blocks, num_classes=1000):
+        s
