@@ -139,4 +139,7 @@ class bottleneck_block(tf.keras.Model):
 
 class MPNCOV_ResNet(tf.keras.Model):
     def __init__(self, block_fn, blocks, num_classes=1000):
-        s
+        super(MPNCOV_ResNet, self).__init__()
+        self.in_filters = 64
+        self.padding = layers.ZeroPadding2D(padding=3)
+        self.conv1 = layers.Conv2D(filters=64, k
