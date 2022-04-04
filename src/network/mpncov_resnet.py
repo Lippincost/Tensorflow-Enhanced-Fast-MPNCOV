@@ -144,4 +144,7 @@ class MPNCOV_ResNet(tf.keras.Model):
         self.padding = layers.ZeroPadding2D(padding=3)
         self.conv1 = layers.Conv2D(filters=64, kernel_size=7, strides=2, use_bias=False, padding='valid',
                                    kernel_initializer=tf.keras.initializers.VarianceScaling())
-        self.bn1 = batch_norm
+        self.bn1 = batch_norm(init_zero=False)
+        self.relu = layers.ReLU()
+        self.maxpool_padding = layers.ZeroPadding2D(padding=1)
+        self.maxpool = layers.MaxPooling2D(pool_size
