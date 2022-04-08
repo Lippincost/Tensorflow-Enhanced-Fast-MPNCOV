@@ -152,4 +152,8 @@ class MPNCOV_ResNet(tf.keras.Model):
         self.layer1 = self._make_layer(block_fn, 64, blocks[0], name='stage1')
         self.layer2 = self._make_layer(block_fn, 128, blocks[1], stride=2, name='stage2')
         self.layer3 = self._make_layer(block_fn, 256, blocks[2], stride=2, name='stage3')
-        self.layer4 = self._make_layer(b
+        self.layer4 = self._make_layer(block_fn, 512, blocks[3], stride=1, name='stage4')
+
+
+        self.conv_dr_block = tf.keras.Sequential(layers=[conv1X1(256),
+                                                         ba
