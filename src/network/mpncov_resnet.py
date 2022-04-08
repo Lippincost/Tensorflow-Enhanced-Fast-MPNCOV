@@ -150,4 +150,6 @@ class MPNCOV_ResNet(tf.keras.Model):
         self.maxpool = layers.MaxPooling2D(pool_size=3, strides=2, padding='valid')
 
         self.layer1 = self._make_layer(block_fn, 64, blocks[0], name='stage1')
-        self.layer2 = self._make_layer(block_f
+        self.layer2 = self._make_layer(block_fn, 128, blocks[1], stride=2, name='stage2')
+        self.layer3 = self._make_layer(block_fn, 256, blocks[2], stride=2, name='stage3')
+        self.layer4 = self._make_layer(b
