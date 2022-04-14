@@ -156,4 +156,8 @@ class MPNCOV_ResNet(tf.keras.Model):
 
 
         self.conv_dr_block = tf.keras.Sequential(layers=[conv1X1(256),
-                                                         ba
+                                                         batch_norm(),
+                                                         layers.ReLU()],
+                                                 name='conv_dr_block')
+
+        self
