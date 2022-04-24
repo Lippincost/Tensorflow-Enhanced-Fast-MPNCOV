@@ -160,4 +160,7 @@ class MPNCOV_ResNet(tf.keras.Model):
                                                          layers.ReLU()],
                                                  name='conv_dr_block')
 
-        self
+        self.MPNCOV = MPNCOV(input_dim=256, iterNum=5, dimension_reduction=None)
+
+        self.fc = layers.Dense(num_classes,
+                               kernel_initiali
