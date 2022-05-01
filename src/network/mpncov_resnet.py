@@ -163,4 +163,8 @@ class MPNCOV_ResNet(tf.keras.Model):
         self.MPNCOV = MPNCOV(input_dim=256, iterNum=5, dimension_reduction=None)
 
         self.fc = layers.Dense(num_classes,
-                               kernel_initiali
+                               kernel_initializer=tf.random_normal_initializer(stddev=.01))
+
+    def _make_layer(self, block, filters, blocks, stride=1, name=None):
+        downsample = None
+        if stride != 
