@@ -181,4 +181,9 @@ class MPNCOV_ResNet(tf.keras.Model):
     def call(self, x, training):
         x = self.padding(x)
         x = self.conv1(x)
-    
+        x = self.bn1(x, training=training)
+        x = self.relu(x)
+        x = self.maxpool_padding(x)
+        x = self.maxpool(x)
+
+        x = self.layer1(x, trainin
