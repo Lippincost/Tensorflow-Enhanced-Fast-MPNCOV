@@ -174,4 +174,11 @@ class MPNCOV_ResNet(tf.keras.Model):
         block_layers.append(block(filters, stride, downsample))
         self.in_filters = filters * block.expansion
         for i in range(1, blocks):
-            block_layers.append(block
+            block_layers.append(block(filters))
+
+        return tf.keras.Sequential(layers=block_layers, name=name)
+
+    def call(self, x, training):
+        x = self.padding(x)
+        x = self.conv1(x)
+    
