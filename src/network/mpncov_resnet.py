@@ -170,4 +170,8 @@ class MPNCOV_ResNet(tf.keras.Model):
         if stride != 1 or self.in_filters != filters * block.expansion:
             downsample = downsample_block(filters=filters * block.expansion, strides=stride)
 
-        block_layer
+        block_layers= []
+        block_layers.append(block(filters, stride, downsample))
+        self.in_filters = filters * block.expansion
+        for i in range(1, blocks):
+            block_layers.append(block
