@@ -203,4 +203,7 @@ def mpncovresnet50(pretrained=False, **kwargs):
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
     """
-    model = MPNCO
+    model = MPNCOV_ResNet(bottleneck_block, [3, 4, 6, 3], **kwargs)
+    if pretrained:
+        model(tf.random.normal([1, 224, 224, 3]), training=False)
+        weights = sio.l
