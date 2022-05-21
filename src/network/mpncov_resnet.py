@@ -190,3 +190,11 @@ class MPNCOV_ResNet(tf.keras.Model):
         x = self.layer2(x, training=training)
         x = self.layer3(x, training=training)
         x = self.layer4(x, training=training)
+
+        x = self.conv_dr_block(x, training=training)
+        x = self.MPNCOV(x, training=training)
+
+        x = self.fc(x)
+        return x
+
+def mpncovresnet50(pr
