@@ -197,4 +197,10 @@ class MPNCOV_ResNet(tf.keras.Model):
         x = self.fc(x)
         return x
 
-def mpncovresnet50(pr
+def mpncovresnet50(pretrained=False, **kwargs):
+    """Constructs a MPNCOVResNet-50 model.
+
+    Args:
+        pretrained (bool): If True, returns a model pre-trained on ImageNet
+    """
+    model = MPNCO
