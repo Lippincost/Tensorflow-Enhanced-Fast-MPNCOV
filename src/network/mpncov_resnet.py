@@ -222,4 +222,7 @@ def mpncovresnet26(pretrained=False, **kwargs):
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
     """
-    mod
+    model = MPNCOV_ResNet(bottleneck_block, [2, 2, 2, 2], **kwargs)
+    if pretrained:
+        model(tf.random.normal([1, 224, 224, 3]), training=False)
+        weights = sio.l
