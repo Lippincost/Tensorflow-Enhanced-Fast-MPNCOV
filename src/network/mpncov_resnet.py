@@ -225,4 +225,8 @@ def mpncovresnet26(pretrained=False, **kwargs):
     model = MPNCOV_ResNet(bottleneck_block, [2, 2, 2, 2], **kwargs)
     if pretrained:
         model(tf.random.normal([1, 224, 224, 3]), training=False)
-        weights = sio.l
+        weights = sio.loadmat('mpncovresnet26.mat')['params'][0]
+        new_weights = []
+        for w in weights:
+            if len(w.shape) == 2:
+                new_wei
