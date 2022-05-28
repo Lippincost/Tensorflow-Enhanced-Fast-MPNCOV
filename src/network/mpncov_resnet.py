@@ -216,4 +216,10 @@ def mpncovresnet50(pretrained=False, **kwargs):
         model.set_weights(new_weights)
     return model
 
-def mpncovresnet26(pretrained=
+def mpncovresnet26(pretrained=False, **kwargs):
+    """Constructs a MPNCOVResNet-26 model.
+
+    Args:
+        pretrained (bool): If True, returns a model pre-trained on ImageNet
+    """
+    mod
