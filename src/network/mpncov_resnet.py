@@ -240,4 +240,8 @@ def mpncovresnet101(pretrained=False, **kwargs):
     """Constructs a MPNCOVResNet-101 model.
 
     Args:
-        pretrained (bool): If True,
+        pretrained (bool): If True, returns a model pre-trained on ImageNet
+    """
+    model = MPNCOV_ResNet(bottleneck_block, [3, 4, 23, 3], **kwargs)
+    if pretrained:
+        mode
