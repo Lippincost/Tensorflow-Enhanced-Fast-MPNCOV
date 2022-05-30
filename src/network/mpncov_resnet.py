@@ -233,3 +233,11 @@ def mpncovresnet26(pretrained=False, **kwargs):
             else:
                 new_weights.append(w.astype(np.float16))
         model.set_weights(new_weights)
+    return model
+
+
+def mpncovresnet101(pretrained=False, **kwargs):
+    """Constructs a MPNCOVResNet-101 model.
+
+    Args:
+        pretrained (bool): If True,
