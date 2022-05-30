@@ -229,4 +229,7 @@ def mpncovresnet26(pretrained=False, **kwargs):
         new_weights = []
         for w in weights:
             if len(w.shape) == 2:
-                new_wei
+                new_weights.append(np.squeeze(w).astype(np.float16))
+            else:
+                new_weights.append(w.astype(np.float16))
+        model.set_weights(new_weights)
