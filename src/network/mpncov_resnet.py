@@ -248,3 +248,7 @@ def mpncovresnet101(pretrained=False, **kwargs):
         weights = sio.loadmat('mpncovresnet101.mat')['params'][0]
         new_weights = []
         for w in weights:
+            if len(w.shape) == 2:
+                new_weights.append(np.squeeze(w).astype(np.float16))
+            else:
+                new_weights.append(w.astype(np.float16
