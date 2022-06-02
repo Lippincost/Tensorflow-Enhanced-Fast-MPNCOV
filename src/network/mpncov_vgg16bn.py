@@ -19,4 +19,7 @@ def batch_norm(init_zero=False, name=None):
     else:
         axis = 1
     return layers.BatchNormalization(axis=axis,
-                                    
+                                        momentum=BATCH_NORM_DECAY,
+                                        epsilon=BATCH_NORM_EPSILON,
+                                        center=True,
+                         
