@@ -14,4 +14,9 @@ def batch_norm(init_zero=False, name=None):
     else:
         gamma_initializer = tf.ones_initializer()
 
- 
+    if tf.keras.backend.image_data_format() == 'channels_last':
+        axis = 3
+    else:
+        axis = 1
+    return layers.BatchNormalization(axis=axis,
+                                    
