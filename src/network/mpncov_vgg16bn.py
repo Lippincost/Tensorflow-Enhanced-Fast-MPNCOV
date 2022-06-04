@@ -28,4 +28,8 @@ def batch_norm(init_zero=False, name=None):
 class MPNCOV_VGG(tf.keras.Model):
     def __init__(self, features, classes=1000):
         super(MPNCOV_VGG, self).__init__()
-        self.features = feat
+        self.features = features
+        self.representation = MPNCOV(input_dim=512, dimension_reduction=256, iterNum=5)
+        self.classifier = tf.keras.Sequential(
+            layers=[
+             
