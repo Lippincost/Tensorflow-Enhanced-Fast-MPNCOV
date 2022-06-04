@@ -22,4 +22,6 @@ def batch_norm(init_zero=False, name=None):
                                         momentum=BATCH_NORM_DECAY,
                                         epsilon=BATCH_NORM_EPSILON,
                                         center=True,
-                         
+                                        scale=True,
+                                        fused=True,
+                                        gamma_initializer=gamma_initializer, n
