@@ -24,4 +24,8 @@ def batch_norm(init_zero=False, name=None):
                                         center=True,
                                         scale=True,
                                         fused=True,
-                                        gamma_initializer=gamma_initializer, n
+                                        gamma_initializer=gamma_initializer, name=name)
+class MPNCOV_VGG(tf.keras.Model):
+    def __init__(self, features, classes=1000):
+        super(MPNCOV_VGG, self).__init__()
+        self.features = feat
