@@ -32,4 +32,7 @@ class MPNCOV_VGG(tf.keras.Model):
         self.representation = MPNCOV(input_dim=512, dimension_reduction=256, iterNum=5)
         self.classifier = tf.keras.Sequential(
             layers=[
-             
+                layers.Flatten(),
+                layers.Dense(4096, activation='relu'),
+                layers.Dropout(0.5),
+                layers.Dense(4096, activation='relu')
