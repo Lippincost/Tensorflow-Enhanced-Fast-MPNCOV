@@ -46,4 +46,8 @@ class MPNCOV_VGG(tf.keras.Model):
         return x
 
 def mpncov_vgg16bn(pretrained):
-    
+    features = tf.keras.Sequential(
+        layers=[
+            # Block 1
+            layers.Conv2D(64, (3, 3), padding="same", name='block1_conv1'),
+         
