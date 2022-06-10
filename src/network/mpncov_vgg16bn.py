@@ -35,4 +35,9 @@ class MPNCOV_VGG(tf.keras.Model):
                 layers.Flatten(),
                 layers.Dense(4096, activation='relu'),
                 layers.Dropout(0.5),
-                layers.Dense(4096, activation='relu')
+                layers.Dense(4096, activation='relu'),
+                layers.Dropout(0.5),
+                layers.Dense(classes)],
+            name='classifier')
+    def call(self, x, training=None):
+        x = self.features(x
