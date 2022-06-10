@@ -40,4 +40,10 @@ class MPNCOV_VGG(tf.keras.Model):
                 layers.Dense(classes)],
             name='classifier')
     def call(self, x, training=None):
-        x = self.features(x
+        x = self.features(x, training=training)
+        x = self.representation(x, training=training)
+        x = self.classifier(x, training=training)
+        return x
+
+def mpncov_vgg16bn(pretrained):
+    
