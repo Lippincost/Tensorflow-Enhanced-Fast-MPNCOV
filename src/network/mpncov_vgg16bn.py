@@ -50,4 +50,6 @@ def mpncov_vgg16bn(pretrained):
         layers=[
             # Block 1
             layers.Conv2D(64, (3, 3), padding="same", name='block1_conv1'),
-         
+            batch_norm(name='block1_bn1'),
+            layers.ReLU(name='block1_relu1'),
+            layers.Conv2D(64, (3, 3), padding="same", name='bloc
