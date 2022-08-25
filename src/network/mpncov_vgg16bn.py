@@ -84,4 +84,7 @@ def mpncov_vgg16bn(pretrained):
             layers.ReLU(name='block4_relu2'),
             layers.Conv2D(512, (3, 3), padding="same", name='block4_conv3'),
             batch_norm(name='block4_bn3'),
-        
+            layers.ReLU(name='block4_relu3'),
+            layers.MaxPooling2D((2, 2), (2, 2), name='block4_pool'),
+            # Block 5
+            layers.Conv2D(512, (3, 3), padding="same", name='block5_conv1
