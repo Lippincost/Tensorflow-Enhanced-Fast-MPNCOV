@@ -94,4 +94,9 @@ def mpncov_vgg16bn(pretrained):
             batch_norm(name='block5_bn2'),
             layers.ReLU(name='block5_relu2'),
             layers.Conv2D(512, (3, 3), padding="same", name='block5_conv3'),
-            batch_
+            batch_norm(name='block5_bn3'),
+            layers.ReLU(name='block5_relu3')],
+        name='vgg16bn_features')
+    model = MPNCOV_VGG(features)
+    if pretrained:
+        input = tf.random.
