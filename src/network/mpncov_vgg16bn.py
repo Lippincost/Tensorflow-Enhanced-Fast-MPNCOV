@@ -103,4 +103,7 @@ def mpncov_vgg16bn(pretrained):
         model(input, training=False)
         # model.features.summary()
         # model.classifier.summary()
-        weight_path = '/media/xcq/x
+        weight_path = '/media/xcq/xcqdisk/MPNCOV_tensorflow/src/network/mpncov_vgg16bn_tf.h5'
+        model.load_weights(weight_path)
+
+    return model
