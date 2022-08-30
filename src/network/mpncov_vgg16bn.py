@@ -99,4 +99,8 @@ def mpncov_vgg16bn(pretrained):
         name='vgg16bn_features')
     model = MPNCOV_VGG(features)
     if pretrained:
-        input = tf.random.
+        input = tf.random.normal([1, 224, 224, 3])
+        model(input, training=False)
+        # model.features.summary()
+        # model.classifier.summary()
+        weight_path = '/media/xcq/x
