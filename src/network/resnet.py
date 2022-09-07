@@ -32,4 +32,9 @@ __all__ = ['ResNet', 'resnet18', 'resnet26', 'resnet34', 'resnet50', 'resnet101'
            'resnet152']
 
 BATCH_NORM_DECAY = 0.9
-BATCH_NOR
+BATCH_NORM_EPSILON = 1e-5
+
+
+def conv1X1(filters, stride=1):
+    """1x1 convolution"""
+    return layers.Conv2D(filters, kernel_size=1, strides=stride, use_bias=False, padd
