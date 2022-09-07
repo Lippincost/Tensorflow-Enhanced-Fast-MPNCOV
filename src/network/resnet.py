@@ -25,4 +25,11 @@ from __future__ import print_function
 
 import numpy as np
 import tensorflow as tf
-import tensorflow.keras.lay
+import tensorflow.keras.layers as layers
+import scipy.io as sio
+
+__all__ = ['ResNet', 'resnet18', 'resnet26', 'resnet34', 'resnet50', 'resnet101',
+           'resnet152']
+
+BATCH_NORM_DECAY = 0.9
+BATCH_NOR
