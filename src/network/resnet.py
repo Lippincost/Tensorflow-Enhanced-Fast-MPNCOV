@@ -37,4 +37,9 @@ BATCH_NORM_EPSILON = 1e-5
 
 def conv1X1(filters, stride=1):
     """1x1 convolution"""
-    return layers.Conv2D(filters, kernel_size=1, strides=stride, use_bias=False, padd
+    return layers.Conv2D(filters, kernel_size=1, strides=stride, use_bias=False, padding='same',
+                      kernel_initializer=tf.keras.initializers.VarianceScaling())
+
+def conv3X3(filters, stride=1):
+    """3x3 convolution with padding"""
+  
