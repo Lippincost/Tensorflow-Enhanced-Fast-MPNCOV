@@ -42,4 +42,6 @@ def conv1X1(filters, stride=1):
 
 def conv3X3(filters, stride=1):
     """3x3 convolution with padding"""
-  
+    return tf.keras.Sequential([
+        layers.ZeroPadding2D(padding=1),
+        layers.Conv2D(filters, kernel_size=3, strides=stride, use_bias=False, padding='valid',
