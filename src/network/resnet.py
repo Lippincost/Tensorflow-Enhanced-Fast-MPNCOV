@@ -62,3 +62,6 @@ def batch_norm(init_zero=False):
         axis = 3
     else:
         axis = 1
+    return layers.BatchNormalization(axis=axis,
+                                        momentum=BATCH_NORM_DECAY,
+                                        epsilon=BATCH_NORM_EP
