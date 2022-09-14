@@ -54,4 +54,11 @@ def conv3X3(filters, stride=1):
 
 def batch_norm(init_zero=False):
     if init_zero:
-        gamma_initialize
+        gamma_initializer = tf.zeros_initializer()
+    else:
+        gamma_initializer = tf.ones_initializer()
+
+    if tf.keras.backend.image_data_format() == 'channels_last':
+        axis = 3
+    else:
+        axis = 1
