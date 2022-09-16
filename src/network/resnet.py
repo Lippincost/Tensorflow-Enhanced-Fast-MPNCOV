@@ -67,4 +67,9 @@ def batch_norm(init_zero=False):
                                         epsilon=BATCH_NORM_EPSILON,
                                         center=True,
                                         scale=True,
-                                        gamma_initial
+                                        gamma_initializer=gamma_initializer)
+class downsample_block(tf.keras.Model):
+    expansion = 1
+    def __init__(self, filters, strides=1):
+        super(downsample_block, self).__init__()
+        self.d
