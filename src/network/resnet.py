@@ -75,4 +75,9 @@ class downsample_block(tf.keras.Model):
         self.downsample_conv = conv1X1(filters, strides)
         self.downsample_bn = batch_norm(init_zero=False)
     def call(self, x, training):
-        out = 
+        out = self.downsample_conv(x)
+        out = self.downsample_bn(out, training=training)
+        return out
+
+class residual_block(tf.keras.Model):
+    def __init__(self, fil
