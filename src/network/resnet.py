@@ -80,4 +80,7 @@ class downsample_block(tf.keras.Model):
         return out
 
 class residual_block(tf.keras.Model):
-    def __init__(self, fil
+    def __init__(self, filters, strides=1, downsample=None):
+        super(residual_block, self).__init__()
+        self.conv1 = conv3X3(filters=filters, stride=strides)
+        self.bn1 = batch_norm
