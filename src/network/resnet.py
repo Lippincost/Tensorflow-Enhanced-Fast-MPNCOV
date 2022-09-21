@@ -87,4 +87,10 @@ class residual_block(tf.keras.Model):
         self.relu = layers.ReLU()
         self.conv2 = conv3X3(filters=filters, stride=1)
         self.bn2 = batch_norm(init_zero=True)
-        self.down
+        self.downsample = downsample
+        self.strides = strides
+    def call(self, x, training):
+        identity = x
+        out = self.conv1(x)
+        out = self.bn1(out, training=training)
+        out 
