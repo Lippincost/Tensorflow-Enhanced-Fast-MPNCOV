@@ -93,4 +93,9 @@ class residual_block(tf.keras.Model):
         identity = x
         out = self.conv1(x)
         out = self.bn1(out, training=training)
-        out 
+        out = self.relu(out)
+        out = self.conv2(out)
+        out = self.bn2(out, training=training)
+
+        if self.downsample is not None:
+            identity = self.downsample(
