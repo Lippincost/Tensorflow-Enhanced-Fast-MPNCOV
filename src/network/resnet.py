@@ -107,4 +107,7 @@ class residual_block(tf.keras.Model):
 class bottleneck_block(tf.keras.Model):
     expansion = 4
 
-    def __init__(self, filters,
+    def __init__(self, filters, strides=1, downsample=None):
+        super(bottleneck_block, self).__init__()
+        self.conv1 = conv1X1(filters=filters, stride=1)
+        self.bn1 = ba
