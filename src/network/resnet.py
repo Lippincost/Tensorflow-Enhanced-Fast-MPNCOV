@@ -110,4 +110,7 @@ class bottleneck_block(tf.keras.Model):
     def __init__(self, filters, strides=1, downsample=None):
         super(bottleneck_block, self).__init__()
         self.conv1 = conv1X1(filters=filters, stride=1)
-        self.bn1 = ba
+        self.bn1 = batch_norm(init_zero=False)
+        self.conv2 = conv3X3(filters=filters, stride=strides)
+        self.bn2 = batch_norm(init_zero=False)
+        self.conv3 = conv1X1(
