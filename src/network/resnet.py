@@ -117,4 +117,9 @@ class bottleneck_block(tf.keras.Model):
         self.bn3 = batch_norm(init_zero=False)
         self.relu = layers.ReLU()
         self.downsample = downsample
-      
+        self.strides = strides
+    def call(self, x ,training):
+        identity = x
+        out = self.conv1(x)
+        out = self.bn1(out, training=training)
+        out = self.relu(ou
