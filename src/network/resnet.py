@@ -135,4 +135,11 @@ class bottleneck_block(tf.keras.Model):
             identity = self.downsample(x, training=training)
         out += identity
         out = self.relu(out)
-     
+        return out
+
+
+class ResNet(tf.keras.Model):
+    def __init__(self, block_fn, blocks, num_classes=1000):
+        super(ResNet, self).__init__()
+        self.in_filters = 64
+        
