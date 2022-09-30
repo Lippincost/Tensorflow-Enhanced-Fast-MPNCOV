@@ -142,4 +142,6 @@ class ResNet(tf.keras.Model):
     def __init__(self, block_fn, blocks, num_classes=1000):
         super(ResNet, self).__init__()
         self.in_filters = 64
-        
+        self.padding = layers.ZeroPadding2D(padding=3)
+        self.conv1 = layers.Conv2D(filters=64, kernel_size=7, strides=2, use_bias=False, padding='valid',
+                                   
