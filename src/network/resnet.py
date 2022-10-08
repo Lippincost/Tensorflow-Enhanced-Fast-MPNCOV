@@ -157,4 +157,7 @@ class ResNet(tf.keras.Model):
 
         self.avgpool = layers.GlobalAveragePooling2D()
 
-        
+        self.fc = layers.Dense(num_classes,
+                               kernel_initializer=tf.random_normal_initializer(stddev=.01))
+
+    def _make_layer(self, block, filters, bloc
