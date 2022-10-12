@@ -167,4 +167,11 @@ class ResNet(tf.keras.Model):
 
         block_layers= []
         block_layers.append(block(filters, stride, downsample))
-        self.in_filters = filters * block.e
+        self.in_filters = filters * block.expansion
+        for i in range(1, blocks):
+            block_layers.append(block(filters))
+
+        return tf.keras.Sequential(block_layers)
+
+    def call(self, x, training):
+     
