@@ -174,4 +174,9 @@ class ResNet(tf.keras.Model):
         return tf.keras.Sequential(block_layers)
 
     def call(self, x, training):
-     
+        x = self.padding(x)
+        x = self.conv1(x)
+        x = self.bn1(x, training=training)
+        x = self.relu(x)
+        x = self.maxpool_padding(x)
+        x = self.
