@@ -179,4 +179,8 @@ class ResNet(tf.keras.Model):
         x = self.bn1(x, training=training)
         x = self.relu(x)
         x = self.maxpool_padding(x)
-        x = self.
+        x = self.maxpool(x)
+
+        x = self.layer1(x, training=training)
+        x = self.layer2(x, training=training)
+        x = self.layer3(x, training=trainin
