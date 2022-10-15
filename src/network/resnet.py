@@ -183,4 +183,12 @@ class ResNet(tf.keras.Model):
 
         x = self.layer1(x, training=training)
         x = self.layer2(x, training=training)
-        x = self.layer3(x, training=trainin
+        x = self.layer3(x, training=training)
+        x = self.layer4(x, training=training)
+
+        x = self.avgpool(x)
+        x = self.fc(x)
+        return x
+
+
+def resnet18(pretrained=False, **
