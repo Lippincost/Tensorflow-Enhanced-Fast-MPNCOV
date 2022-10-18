@@ -197,4 +197,11 @@ def resnet18(pretrained=False, **kwargs):
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
     """
-    model = ResNe
+    model = ResNet(residual_block, [2, 2, 2, 2], **kwargs)
+    return model
+
+def resnet26(pretrained=False, **kwargs):
+    """Constructs a ResNet-50 model.
+
+    Args:
+        pretrained (bool
