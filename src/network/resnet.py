@@ -204,4 +204,10 @@ def resnet26(pretrained=False, **kwargs):
     """Constructs a ResNet-50 model.
 
     Args:
-        pretrained (bool
+        pretrained (bool): If True, returns a model pre-trained on ImageNet
+    """
+    model = ResNet(bottleneck_block, [2, 2, 2, 2], **kwargs)
+    return model
+
+
+def resnet34(pretrained=Fals
