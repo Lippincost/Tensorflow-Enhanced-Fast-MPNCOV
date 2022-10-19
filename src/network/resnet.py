@@ -210,4 +210,10 @@ def resnet26(pretrained=False, **kwargs):
     return model
 
 
-def resnet34(pretrained=Fals
+def resnet34(pretrained=False, **kwargs):
+    """Constructs a ResNet-34 model.
+
+    Args:
+        pretrained (bool): If True, returns a model pre-trained on ImageNet
+    """
+    model = ResNet(residua
