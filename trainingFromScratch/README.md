@@ -1,2 +1,2 @@
 ## Train from scratch
-By using our code, we rep
+By using our code, we reproduce the results of our Fast MPN-COV ResNet models on ImageNet 2012. At the same time, in order to facilitate the performance evaluation, we also provide the results on CIFAR100
