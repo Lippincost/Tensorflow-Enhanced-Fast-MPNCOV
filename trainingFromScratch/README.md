@@ -7,4 +7,7 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
  * Cuda 10.0 with CuDNN 7.5<br>
  
 ## Results
-#### Classifica
+#### Classification results (single crop 224x224, %) on **ImageNet 2012** validation set
+<table>
+<tr>                                      
+    <td rowspan="3" align='center'>Network</strong>
