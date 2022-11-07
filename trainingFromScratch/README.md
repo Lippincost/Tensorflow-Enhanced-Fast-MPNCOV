@@ -13,4 +13,11 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
     <td rowspan="3" align='center'>Network</strong></td>
     <td rowspan="3" align='center'>Dim</td>
     <td colspan="3" align='center'>Top1_err/Top5_err</td>
-    <td colspan="2" rowspan="2" align='center'>Pre-trai
+    <td colspan="2" rowspan="2" align='center'>Pre-trained models<br>(tensorflow)</td>
+</tr>
+<tr>
+    <td rowspan="2" align='center'>paper</td>
+    <td colspan="2" align='center'>reproduce</td>
+</tr>
+<tr>
+    <t
