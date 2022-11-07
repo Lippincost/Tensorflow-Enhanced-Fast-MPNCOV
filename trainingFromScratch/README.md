@@ -10,4 +10,7 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
 #### Classification results (single crop 224x224, %) on **ImageNet 2012** validation set
 <table>
 <tr>                                      
-    <td rowspan="3" align='center'>Network</strong>
+    <td rowspan="3" align='center'>Network</strong></td>
+    <td rowspan="3" align='center'>Dim</td>
+    <td colspan="3" align='center'>Top1_err/Top5_err</td>
+    <td colspan="2" rowspan="2" align='center'>Pre-trai
