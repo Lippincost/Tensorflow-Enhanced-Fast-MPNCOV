@@ -20,4 +20,6 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
     <td colspan="2" align='center'>reproduce</td>
 </tr>
 <tr>
-    <t
+    <td align='center'><strong>tensorflow</strong></td>
+    <td align='center'><a href="https://github.com/jiangtaoxie/fast-MPN-COV" title="标题">pytorch</a></td>
+    <td a
