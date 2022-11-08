@@ -22,4 +22,10 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
 <tr>
     <td align='center'><strong>tensorflow</strong></td>
     <td align='center'><a href="https://github.com/jiangtaoxie/fast-MPN-COV" title="标题">pytorch</a></td>
-    <td a
+    <td align='center'>GoogleDrive</td>
+    <td align='center'>BaiduDrive</td>
+</tr>
+<tr>
+    <td>fast-MPN-COV-VGG-D</td>
+    <td rowspan="3" align='center'> 32K</td>
+    <td align='center'>26.55/8.94</
