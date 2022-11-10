@@ -35,4 +35,8 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
     <td align='center'><a href="https://pan.baidu.com/s/13u1nih7bC1b4Mgn9APYxBA" title="标题">650.4M</a></td>
 </tr>
 <tr>
- 
+    <td>fast-MPN-COV-ResNet50</td>
+    <td align='center'>22.14/6.22</td>
+    <td align='center'><strong>21.57/6.14</strong></td>
+    <td align='center'>21.71/6.13</td>
+    <t
