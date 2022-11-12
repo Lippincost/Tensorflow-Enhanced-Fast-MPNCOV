@@ -45,4 +45,6 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
 <tr>
     <td>fast-MPN-COV-ResNet101</td>
     <td align='center'>21.21/5.68</td>
-    <td align='cente
+    <td align='center'><strong>20.50/5.45</strong></td>
+    <td align='center'>20.99/5.56</td>
+    <td align='center'><a href="https://drive.google.com/file/d/1RFdw2oEZLe03SCDFan
