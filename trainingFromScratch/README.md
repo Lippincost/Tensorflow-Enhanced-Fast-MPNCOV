@@ -53,4 +53,5 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
 
 </table>
 
-* We c
+* We convert the trained fast-MPNCOV-VGG-D model from the PyTorch framework to TensorFlow framework.
+#### Classification results (single crop 32x32, %) on **CTFAR100** validation
