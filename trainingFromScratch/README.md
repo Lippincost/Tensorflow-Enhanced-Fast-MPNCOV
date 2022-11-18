@@ -59,4 +59,12 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
 <tr>                                      
     <td align='center'>Network</strong></td>
     <td align='center'>Dim</td>
-    <td align='center'>Top1
+    <td align='center'>Top1_err</td>
+</tr>
+<tr>
+    <td>PreAct-Resnet164</td>
+    <td align='center'>256</td>
+    <td align='center'>24.33</td>
+</tr>
+<tr>
+    <td>fast-MPN-COV-PreAct-Re
