@@ -67,4 +67,8 @@ By using our code, we reproduce the results of our Fast MPN-COV ResNet models on
     <td align='center'>24.33</td>
 </tr>
 <tr>
-    <td>fast-MPN-COV-PreAct-Re
+    <td>fast-MPN-COV-PreAct-ResNet164</td>
+    <td rowspan="2" align='center'> 8256<br>(dropout:0.5)</td>
+    <td align='center'>19.91</td>
+</tr>
+</table>
