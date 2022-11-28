@@ -20,4 +20,7 @@ The networks are trained within 140 epochs with the initial learningrate of 0.1,
     representation = {'function': MPNCOV,
                       'iterNum': 5,
                       'input_dim': 256,
-                  
+                      'dimension_reduction': 128,
+                      'dropout_p': 0.5}
+```
+The networks are trained within 110 epochs with the initial learningrate of 0.25, which is re
