@@ -23,4 +23,8 @@ The networks are trained within 140 epochs with the initial learningrate of 0.1,
                       'dimension_reduction': 128,
                       'dropout_p': 0.5}
 ```
-The networks are trained within 110 epochs with the initial learningrate of 0.25, which is re
+The networks are trained within 110 epochs with the initial learningrate of 0.25, which is reduced to 0.025 and 0.0025 at the 80th and 95th epoch, respectively.The mini-batch size is 128 and weight decay is 1e-4.
+
+ 
+## Results
+#### Classification results (singl
