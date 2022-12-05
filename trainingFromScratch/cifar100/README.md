@@ -32,4 +32,12 @@ The networks are trained within 110 epochs with the initial learningrate of 0.25
 <tr>                                      
     <td align='center'>Network</strong></td>
     <td align='center'>Dim</td>
-    <td align='center'
+    <td align='center'>Top1_err</td>
+</tr>
+<tr>
+    <td>PreAct_Resnet164</td>
+    <td align='center'>256</td>
+    <td align='center'>24.33</td>
+</tr>
+<tr>
+    <td>MPNCOV_PreAct_Resn
