@@ -27,4 +27,9 @@ The networks are trained within 110 epochs with the initial learningrate of 0.25
 
  
 ## Results
-#### Classification results (singl
+#### Classification results (single crop 32x32, %) on **CTFAR100** validation set
+<table>
+<tr>                                      
+    <td align='center'>Network</strong></td>
+    <td align='center'>Dim</td>
+    <td align='center'
