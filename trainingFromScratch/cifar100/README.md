@@ -40,4 +40,8 @@ The networks are trained within 110 epochs with the initial learningrate of 0.25
     <td align='center'>24.33</td>
 </tr>
 <tr>
-    <td>MPNCOV_PreAct_Resn
+    <td>MPNCOV_PreAct_Resnet164</td>
+    <td rowspan="2" align='center'> 8256<br>(dropout:0.5)</td>
+    <td align='center'>19.91</td>
+</tr>
+</table>
