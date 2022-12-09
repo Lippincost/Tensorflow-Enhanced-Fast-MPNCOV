@@ -14,4 +14,9 @@ DEPTH = 3
 class CifarDataSet(object):
     """Cifar data set."""
 
-    def __init
+    def __init__(self,
+                 data_dir,
+                 is_training=True,
+                 pretrained=False,
+                 arch=None,
+                 imb_fact
