@@ -19,4 +19,9 @@ class CifarDataSet(object):
                  is_training=True,
                  pretrained=False,
                  arch=None,
-                 imb_fact
+                 imb_factor=None,
+                 use_distortion=True):
+        self.data_dir = data_dir
+        self.is_training = is_training
+        self.pretrained = pretrained
+        sel
