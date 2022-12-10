@@ -24,4 +24,10 @@ class CifarDataSet(object):
         self.data_dir = data_dir
         self.is_training = is_training
         self.pretrained = pretrained
-        sel
+        self.arch = arch
+        self.imb_factor = imb_factor
+        self.use_distortion = use_distortion
+
+    def get_filenames(self):
+
+        if self.is_training
