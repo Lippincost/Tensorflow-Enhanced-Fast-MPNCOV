@@ -30,4 +30,7 @@ class CifarDataSet(object):
 
     def get_filenames(self):
 
-        if self.is_training
+        if self.is_training:
+            return [os.path.join(self.data_dir, 'train' + '.tfrecords')]
+        else:
+            return [os.path.join(self.data_dir, 'eval' + '.tfrecords
