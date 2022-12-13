@@ -33,4 +33,8 @@ class CifarDataSet(object):
         if self.is_training:
             return [os.path.join(self.data_dir, 'train' + '.tfrecords')]
         else:
-            return [os.path.join(self.data_dir, 'eval' + '.tfrecords
+            return [os.path.join(self.data_dir, 'eval' + '.tfrecords')]
+
+    def parser(self, serialized_example):
+        """Parses a single tf.Example into image and label tensors."""
+        # Dimensions of the images in the CIFAR-10 dataset.
