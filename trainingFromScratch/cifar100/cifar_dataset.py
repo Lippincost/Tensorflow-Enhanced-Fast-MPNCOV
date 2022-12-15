@@ -40,4 +40,8 @@ class CifarDataSet(object):
         # Dimensions of the images in the CIFAR-10 dataset.
         # See http://www.cs.toronto.edu/~kriz/cifar.html for a description of
         # the input format.
-        features = tf.io.parse_single_example
+        features = tf.io.parse_single_example(
+            serialized_example,
+            features={
+                'image': tf.io.FixedLenFeature([], tf.string),
+                'label': tf.io.FixedLenFeature([]
