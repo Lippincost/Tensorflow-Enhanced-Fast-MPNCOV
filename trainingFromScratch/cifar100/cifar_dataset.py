@@ -38,3 +38,6 @@ class CifarDataSet(object):
     def parser(self, serialized_example):
         """Parses a single tf.Example into image and label tensors."""
         # Dimensions of the images in the CIFAR-10 dataset.
+        # See http://www.cs.toronto.edu/~kriz/cifar.html for a description of
+        # the input format.
+        features = tf.io.parse_single_example
