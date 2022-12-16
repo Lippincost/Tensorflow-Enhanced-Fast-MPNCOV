@@ -44,4 +44,9 @@ class CifarDataSet(object):
             serialized_example,
             features={
                 'image': tf.io.FixedLenFeature([], tf.string),
-                'label': tf.io.FixedLenFeature([]
+                'label': tf.io.FixedLenFeature([], tf.int64),
+            })
+        image = tf.io.decode_raw(features['image'], tf.uint8)
+        image.set_shape([DEPTH * HEIGHT * WIDTH])
+
+  
