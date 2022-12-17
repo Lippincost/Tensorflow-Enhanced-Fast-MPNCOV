@@ -49,4 +49,6 @@ class CifarDataSet(object):
         image = tf.io.decode_raw(features['image'], tf.uint8)
         image.set_shape([DEPTH * HEIGHT * WIDTH])
 
-  
+        # Reshape from [depth * height * width] to [depth, height, width].
+        image = tf.cast(
+            tf.transpose(tf.reshape(image, [DEPTH, HEIGHT, 
