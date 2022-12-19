@@ -56,4 +56,10 @@ class CifarDataSet(object):
         label = tf.cast(features['label'], tf.int32)
 
         # Custom preprocessing.
-        image = self.preprocess(im
+        image = self.preprocess(image)
+
+        return image, label
+
+    def make_source_dataset(self, batchsize):
+        """Read the images and labels from 'filenames'."""
+        filenames = self.g
