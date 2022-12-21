@@ -62,4 +62,9 @@ class CifarDataSet(object):
 
     def make_source_dataset(self, batchsize):
         """Read the images and labels from 'filenames'."""
-        filenames = self.g
+        filenames = self.get_filenames()
+        # Repeat infinitely.
+        dataset = tf.data.TFRecordDataset(filenames)
+
+        # Parse records.
+        dataset = dataset.map(self.parser, num_par
