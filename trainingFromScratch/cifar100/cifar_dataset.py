@@ -67,4 +67,9 @@ class CifarDataSet(object):
         dataset = tf.data.TFRecordDataset(filenames)
 
         # Parse records.
-        dataset = dataset.map(self.parser, num_par
+        dataset = dataset.map(self.parser, num_parallel_calls=batchsize)
+
+        # Potentially shuffle records.
+        if self.is_training:
+            min_queue_examples = int(
+                CifarDataSet.num_examples_per_
