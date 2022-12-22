@@ -72,4 +72,7 @@ class CifarDataSet(object):
         # Potentially shuffle records.
         if self.is_training:
             min_queue_examples = int(
-                CifarDataSet.num_examples_per_
+                CifarDataSet.num_examples_per_epoch(self.is_training) * 0.4)
+            # Ensure that the capacity is sufficiently large to provide good
+            # random shuffling.
+            dataset =
