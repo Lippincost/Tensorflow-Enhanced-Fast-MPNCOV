@@ -75,4 +75,10 @@ class CifarDataSet(object):
                 CifarDataSet.num_examples_per_epoch(self.is_training) * 0.4)
             # Ensure that the capacity is sufficiently large to provide good
             # random shuffling.
-            dataset =
+            dataset = dataset.shuffle(buffer_size=min_queue_examples + 3 * batchsize)
+        # Batch it up.
+        dataset = dataset.batch(batchsize)
+        return dataset
+
+    def preprocess(self, image):
+  
