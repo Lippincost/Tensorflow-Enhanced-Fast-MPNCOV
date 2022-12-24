@@ -81,4 +81,6 @@ class CifarDataSet(object):
         return dataset
 
     def preprocess(self, image):
-  
+        """Preprocess a single image in [height, width, depth] layout."""
+        if self.is_training and self.use_distortion:
+            # Pad 4 pixels on each dimension of
