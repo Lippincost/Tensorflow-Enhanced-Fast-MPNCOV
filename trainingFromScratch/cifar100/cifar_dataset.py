@@ -85,4 +85,8 @@ class CifarDataSet(object):
         if self.is_training and self.use_distortion:
             # Pad 4 pixels on each dimension of feature map, done in mini-batch
             image = tf.image.resize_with_crop_or_pad(image, 40, 40)
-            image = tf.image.random_crop(image, [HEIGHT, WIDT
+            image = tf.image.random_crop(image, [HEIGHT, WIDTH, DEPTH])
+            image = tf.image.random_flip_left_right(image)
+        mean = [0.507*255, 0.487*255, 0.441*255]
+        std = [0.267*255, 0.256*255, 0.276*255]
+        image 
