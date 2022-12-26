@@ -83,4 +83,6 @@ class CifarDataSet(object):
     def preprocess(self, image):
         """Preprocess a single image in [height, width, depth] layout."""
         if self.is_training and self.use_distortion:
-            # Pad 4 pixels on each dimension of
+            # Pad 4 pixels on each dimension of feature map, done in mini-batch
+            image = tf.image.resize_with_crop_or_pad(image, 40, 40)
+            image = tf.image.random_crop(image, [HEIGHT, WIDT
