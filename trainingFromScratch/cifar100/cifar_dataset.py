@@ -95,4 +95,7 @@ class CifarDataSet(object):
 
     @staticmethod
     def num_examples_per_epoch(is_training):
-        if i
+        if is_training:
+            return 50000
+        else:
+            return 10000
