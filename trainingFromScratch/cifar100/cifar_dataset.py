@@ -89,4 +89,10 @@ class CifarDataSet(object):
             image = tf.image.random_flip_left_right(image)
         mean = [0.507*255, 0.487*255, 0.441*255]
         std = [0.267*255, 0.256*255, 0.276*255]
-        image 
+        image = tf.subtract(image, mean)
+        image = tf.divide(image, std)
+        return image
+
+    @staticmethod
+    def num_examples_per_epoch(is_training):
+        if i
