@@ -99,3 +99,164 @@ def _decode_and_random_crop(image_bytes, image_size):
       aspect_ratio_range=(3. / 4, 4. / 3.),
       area_range=(0.08, 1.0),
       max_attempts=10,
+      scope=None)
+  original_shape = tf.image.extract_jpeg_shape(image_bytes)
+  bad = _at_least_x_are_equal(original_shape, tf.shape(image), 3)
+
+
+
+  image = tf.cond(
+      bad,
+      lambda: _decode_and_center_crop(image_bytes, image_size),
+      lambda: tf.image.resize(image,    # pylint: disable=g-long-lambda
+                              [image_size, image_size]))
+
+
+  return image
+
+
+def _decode_and_center_crop(image_bytes, image_size):
+  """Crops to center of image with padding then scales image_size."""
+  shape = tf.image.extract_jpeg_shape(image_bytes)
+  image_height = shape[0]
+  image_width = shape[1]
+
+  padded_center_crop_size = tf.cast(
+      ((image_size / (image_size + CROP_PADDING)) *
+       tf.cast(tf.minimum(image_height, image_width), tf.float32)),
+      tf.int32)
+
+  offset_height = ((image_height - padded_center_crop_size) + 1) // 2
+  offset_width = ((image_width - padded_center_crop_size) + 1) // 2
+  crop_window = tf.stack([offset_height, offset_width,
+                          padded_center_crop_size, padded_center_crop_size])
+  image = tf.image.decode_and_crop_jpeg(image_bytes, crop_window, channels=3)
+  image = tf.image.resize(image, [image_size, image_size])
+
+  return image
+
+
+def _flip(image):
+  """Random horizontal image flip."""
+  image = tf.image.random_flip_left_right(image)
+  return image
+
+def ContrastJitterAug(image, contrast):
+    orgdtype = image.dtype
+    if orgdtype in [dtypes.float16, dtypes.float32]:
+        image = image
+    else:
+        image = tf.image.convert_image_dtype(image, dtypes.float32)
+
+    coef = tf.convert_to_tensor([[[0.299,0.587,0.114]]])
+    alpha = 1.0 + tf.random.uniform((1,),-contrast, contrast)
+    gray = image * coef
+
+    gray = 3.0 *(1.0-alpha)/tf.cast(tf.reduce_prod(tf.shape(gray)),dtypes.float32) * tf.reduce_sum(gray)
+    image *= alpha
+    image += gray
+    return tf.image.convert_image_dtype(image, orgdtype, saturate=True)
+
+def BrightnessJitterAug(image, brightness):
+    orgdtype = image.dtype
+    if orgdtype in [dtypes.float16, dtypes.float32]:
+        image = image
+    else:
+        image = tf.image.convert_image_dtype(image, dtypes.float32)
+    alpha = 1.0 + tf.random.uniform((1,), -brightness, brightness)
+    image *= alpha
+
+    return tf.image.convert_image_dtype(image, orgdtype, saturate=True)
+
+def SaturationJitterAug(image, saturation):
+    orgdtype = image.dtype
+    if orgdtype in [dtypes.float16, dtypes.float32]:
+        image = image
+    else:
+        image = tf.image.convert_image_dtype(image, dtypes.float32)
+
+    coef = tf.convert_to_tensor([[[0.299,0.587,0.114]]])
+    alpha = 1.0 - 0.4#tf.random.uniform((1,), -saturation, saturation)
+
+    gray = image * coef
+    gray = tf.reduce_sum(gray, axis=2, keepdims=True)
+    gray *= (1.0-alpha)
+    image *= alpha
+    image += gray
+
+    return tf.image.convert_image_dtype(image, orgdtype, saturate=True)
+def HueJitterAug(image, hue):
+    orgdtype = image.dtype
+    if orgdtype in [dtypes.float16, dtypes.float32]:
+        image = image
+    else:
+        image = tf.image.convert_image_dtype(image, dtypes.float32)
+
+    tyiq = tf.convert_to_tensor([[0.299, 0.587, 0.114],
+                      [0.596, -0.274, -0.321],
+                      [0.211, -0.523, 0.311]])
+    ityiq = tf.convert_to_tensor([[1.0, 0.956, 0.621],
+                       [1.0, -0.272, -0.647],
+                       [1.0, -1.107, 1.705]])
+    alpha = np.random.uniform(-hue, hue)
+    u = np.cos(alpha * np.pi)
+    w = np.sin(alpha * np.pi)
+    bt = tf.convert_to_tensor([[1.0, 0., 0.],
+                    [0., u, -w],
+                    [0., w, u]])
+    t = tf.transpose(tf.matmul(tf.matmul(ityiq, bt), tyiq))
+    image = tf.matmul(image, t)
+    return tf.image.convert_image_dtype(image, orgdtype, saturate=True)
+
+def _ColorJitter(image):
+  """Random horizontal image flip."""
+  # delta = np.random.uniform(-0.4, 0.4)
+  # image = tf.image.adjust_brightness(image, delta=delta)
+  # saturation_factor = np.random.uniform(0.6, 1.4)
+  # image = tf.image.adjust_saturation(image, saturation_factor=saturation_factor)
+  # contrast_factor = np.random.uniform(0.6, 1.4)
+  # image = tf.image.adjust_contrast(image, contrast_factor=contrast_factor)
+  param = 0.4
+  image = SaturationJitterAug(image, param)
+  image = BrightnessJitterAug(image, param)
+  image = ContrastJitterAug(image, param)
+  return image
+
+def _Add_PCA_noise(image):
+    orgdtype = image.dtype
+    if orgdtype in [dtypes.float16, dtypes.float32]:
+        image = image
+    else:
+        image = tf.image.convert_image_dtype(image, dtypes.float32)
+    alphastd = 0.1
+    eigval = tf.convert_to_tensor([[55.46], [4.794], [1.148]])
+    eigvec = tf.convert_to_tensor([[-0.5675, 0.7192, 0.4009],
+                                  [-0.5808, -0.0045, -0.8140],
+                                  [-0.5836, -0.6948, 0.4203]])
+    # eigval = np.array([1, 1, 1])
+    # eigvec = np.ones([3,3])
+    alpha = tf.random.normal((3,), 0, alphastd)
+    rgb = tf.squeeze(tf.matmul(eigvec * alpha, eigval))
+    image = tf.add(image, rgb/255.0)
+    return tf.image.convert_image_dtype(image, orgdtype, saturate=True)
+
+
+def preprocess_for_train(image_bytes, use_bfloat16, image_size=IMAGE_SIZE):
+  """Preprocesses the given image for evaluation.
+
+  Args:
+    image_bytes: `Tensor` representing an image binary of arbitrary size.
+    use_bfloat16: `bool` for whether to use bfloat16.
+    image_size: image size.
+
+  Returns:
+    A preprocessed image `Tensor`.
+  """
+  image = _decode_and_random_crop(image_bytes, image_size)
+  image = _flip(image)
+  image = tf.reshape(image, [image_size, image_size, 3])
+  image = tf.image.convert_image_dtype(
+      image, dtype=tf.bfloat16 if use_bfloat16 else tf.float32)
+#   image = _ColorJitter(image)
+#   image = _Add_PCA_noise(image)
+  image = tf.subtract(image, [0.485 * 255, 0.456 * 255, 0.406 * 255])
