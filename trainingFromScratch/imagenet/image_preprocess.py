@@ -260,3 +260,83 @@ def preprocess_for_train(image_bytes, use_bfloat16, image_size=IMAGE_SIZE):
 #   image = _ColorJitter(image)
 #   image = _Add_PCA_noise(image)
   image = tf.subtract(image, [0.485 * 255, 0.456 * 255, 0.406 * 255])
+  image = tf.divide(image, [0.229 * 255, 0.224 * 255, 0.225 * 255])
+  return image
+
+
+def preprocess_for_eval(image_bytes, use_bfloat16, image_size=IMAGE_SIZE):
+  """Preprocesses the given image for evaluation.
+
+  Args:
+    image_bytes: `Tensor` representing an image binary of arbitrary size.
+    use_bfloat16: `bool` for whether to use bfloat16.
+    image_size: image size.
+
+  Returns:
+    A preprocessed image `Tensor`.
+  """
+  image = _decode_and_center_crop(image_bytes, image_size)
+  image = tf.reshape(image, [image_size, image_size, 3])
+  image = tf.image.convert_image_dtype(
+      image, dtype=tf.bfloat16 if use_bfloat16 else tf.float32)
+  image = tf.subtract(image, [0.485 * 255, 0.456 * 255, 0.406 * 255])
+  image = tf.divide(image, [0.229 * 255, 0.224 * 255, 0.225 * 255])
+  return image
+
+
+def preprocess_image(image_bytes, is_training=False, use_bfloat16=False,
+      image_size=IMAGE_SIZE):
+  """Preprocesses the given image.
+
+  Args:
+    image_bytes: `Tensor` representing an image binary of arbitrary size.
+    is_training: `bool` for whether the preprocessing is for training.
+    use_bfloat16: `bool` for whether to use bfloat16.
+    image_size: image size.
+
+  Returns:
+    A preprocessed image `Tensor` with value range of [0, 255].
+  """
+  if is_training:
+    return preprocess_for_train(image_bytes, use_bfloat16, image_size)
+  else:
+    return preprocess_for_eval(image_bytes, use_bfloat16, image_size)
+
+
+# from PIL import Image
+# image_dir = '/media/xcq/xcqdisk/Black_Footed_Albatross_0007_796138.jpg'
+# with tf.io.gfile.GFile(image_dir, 'rb') as f:
+#     image_data = f.read()
+# with tf.io.gfile.GFile(image_dir, 'rb') as f:
+#     image_data = f.read()
+# # image = preprocess_image(image_data, is_training=True)
+# image = tf.image.decode_jpeg(image_data)
+# # image_np = np.asarray(image.numpy()).astype(np.uint8)
+# #
+# # a = Image.fromarray(image_np, mode='RGB')
+# #
+# # a.show()
+# image_noise = SaturationJitterAug(image, 0.4)
+# # image_noise = _Add_PCA_noise(image)
+# image_np = np.asarray(image_noise.numpy())
+#
+# a = Image.fromarray(image_np, mode='RGB')
+#
+# a.show()
+# image1 = tf.image.adjust_saturation(image, 0.6)
+# image_np1 = np.asarray(image1.numpy())
+#
+# a = Image.fromarray(image_np1, mode='RGB')
+#
+# a.show()
+#
+# image2 = tf.image.adjust_hue(image, delta=0.4)
+# image_np2 = np.asarray(image2.numpy())
+#
+# a = Image.fromarray(image_np2, mode='RGB')
+#
+# a.show()
+# pass
+#
+# pass
+#
