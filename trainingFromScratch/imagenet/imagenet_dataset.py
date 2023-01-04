@@ -257,3 +257,6 @@ class ImageNetInput(ImageNetTFExampleInput):
         tf.data.experimental.map_and_batch(
             self.dataset_parser, batch_size=batchsize,
             num_parallel_batches=2,
+            drop_remainder=True if self.is_training else False))
+
+    return dataset
