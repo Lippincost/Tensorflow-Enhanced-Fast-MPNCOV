@@ -19,4 +19,9 @@ TRAINING_DIRECTORY = 'train'
 VALIDATION_DIRECTORY = 'validation'
 
 parser = argparse.ArgumentParser(description='Convert imagenet dataset to TFRECORDS')
-parser.add_argument('--d
+parser.add_argument('--dataset', metavar='DIR', default=None,
+                    help='path to dataset')
+
+
+def _check_or_create_dir(directory):
+  """Check if directory exists otherw
