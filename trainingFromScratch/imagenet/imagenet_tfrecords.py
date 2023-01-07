@@ -24,4 +24,11 @@ parser.add_argument('--dataset', metavar='DIR', default=None,
 
 
 def _check_or_create_dir(directory):
-  """Check if directory exists otherw
+  """Check if directory exists otherwise create it."""
+  if not os.path.exists(directory):
+    os.makedirs(directory)
+
+
+def _int64_feature(value):
+  """Wrapper for inserting int64 features into Example proto."""
+  if not isinstanc
