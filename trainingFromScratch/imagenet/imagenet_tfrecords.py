@@ -41,4 +41,9 @@ def _bytes_feature(value):
   return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
 
 
-def _convert_to_example(filename, image_buffer, label, height, 
+def _convert_to_example(filename, image_buffer, label, height, width):
+  """Build an Example proto for an example.
+
+  Args:
+    filename: string, path to an image file, e.g., '/path/to/example.JPG'
+    image_buffer: string, J
