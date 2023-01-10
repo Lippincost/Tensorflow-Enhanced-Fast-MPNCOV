@@ -37,4 +37,8 @@ def _int64_feature(value):
 
 
 def _bytes_feature(value):
-  """Wrapper for inserting bytes f
+  """Wrapper for inserting bytes features into Example proto."""
+  return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
+
+
+def _convert_to_example(filename, image_buffer, label, height, 
