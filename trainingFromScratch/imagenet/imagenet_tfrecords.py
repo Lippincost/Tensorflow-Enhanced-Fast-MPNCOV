@@ -49,4 +49,11 @@ def _convert_to_example(filename, image_buffer, label, height, width):
     image_buffer: string, JPEG encoding of RGB image
     label: integer, identifier for the ground truth for the network
     height: integer, image height in pixels
-    width: integer, im
+    width: integer, image width in pixels
+  Returns:
+    Example proto
+  """
+  image_format = b'JPEG'
+
+  example = tf.train.Example(features=tf.train.Features(feature={
+      'image/height': _int64_feature(h
