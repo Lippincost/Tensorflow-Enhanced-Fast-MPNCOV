@@ -46,4 +46,7 @@ def _convert_to_example(filename, image_buffer, label, height, width):
 
   Args:
     filename: string, path to an image file, e.g., '/path/to/example.JPG'
-    image_buffer: string, J
+    image_buffer: string, JPEG encoding of RGB image
+    label: integer, identifier for the ground truth for the network
+    height: integer, image height in pixels
+    width: integer, im
