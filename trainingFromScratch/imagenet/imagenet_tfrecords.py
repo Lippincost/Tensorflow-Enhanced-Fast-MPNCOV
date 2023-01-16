@@ -60,4 +60,12 @@ def _convert_to_example(filename, image_buffer, label, height, width):
       'image/width': _int64_feature(width),
       'image/class/label': _int64_feature(label),
       'image/format': _bytes_feature(image_format),
-      'image/encoded':
+      'image/encoded': _bytes_feature(image_buffer)}))
+  return example
+
+
+def _is_png(filename):
+  """Determine if a file contains a PNG format image.
+
+  Args:
+    filename: string, path of the 
