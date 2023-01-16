@@ -56,4 +56,8 @@ def _convert_to_example(filename, image_buffer, label, height, width):
   image_format = b'JPEG'
 
   example = tf.train.Example(features=tf.train.Features(feature={
-      'image/height': _int64_feature(h
+      'image/height': _int64_feature(height),
+      'image/width': _int64_feature(width),
+      'image/class/label': _int64_feature(label),
+      'image/format': _bytes_feature(image_format),
+      'image/encoded':
