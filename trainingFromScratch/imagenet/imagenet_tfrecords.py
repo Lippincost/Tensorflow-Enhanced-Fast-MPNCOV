@@ -68,4 +68,11 @@ def _is_png(filename):
   """Determine if a file contains a PNG format image.
 
   Args:
-    filename: string, path of the 
+    filename: string, path of the image file.
+
+  Returns:
+    boolean indicating if the image is a PNG.
+  """
+  # File list from:
+  # https://github.com/cytsai/ilsvrc-cmyk-image-list
+  return 'n02105855_2933.JPEG' in file
