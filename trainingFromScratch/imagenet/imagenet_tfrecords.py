@@ -75,4 +75,14 @@ def _is_png(filename):
   """
   # File list from:
   # https://github.com/cytsai/ilsvrc-cmyk-image-list
-  return 'n02105855_2933.JPEG' in file
+  return 'n02105855_2933.JPEG' in filename
+
+
+def _is_cmyk(filename):
+  """Determine if file contains a CMYK JPEG format image.
+
+  Args:
+    filename: string, path of the image file.
+
+  Returns:
+    boolean indicating if t
