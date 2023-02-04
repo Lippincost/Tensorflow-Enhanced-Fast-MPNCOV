@@ -85,4 +85,8 @@ def _is_cmyk(filename):
     filename: string, path of the image file.
 
   Returns:
-    boolean indicating if t
+    boolean indicating if the image is a JPEG encoded with CMYK color space.
+  """
+  # File list from:
+  # https://github.com/cytsai/ilsvrc-cmyk-image-list
+  blacklist = set(['n01739381_
