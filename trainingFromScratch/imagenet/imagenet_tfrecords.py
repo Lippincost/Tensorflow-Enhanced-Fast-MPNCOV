@@ -89,4 +89,6 @@ def _is_cmyk(filename):
   """
   # File list from:
   # https://github.com/cytsai/ilsvrc-cmyk-image-list
-  blacklist = set(['n01739381_
+  blacklist = set(['n01739381_1309.JPEG', 'n02077923_14822.JPEG',
+                   'n02447366_23489.JPEG', 'n02492035_15739.JPEG',
+                   'n02747177_10752.JPEG', 'n03018349_4028.JPEG',
