@@ -110,4 +110,10 @@ class ImageCoder(object):
       return
 
   def png_to_jpeg(self, image_data):
-      image = tf.image.decode_png(image_data, ch
+      image = tf.image.decode_png(image_data, channels=3)
+      _png_to_jpeg = tf.image.encode_jpeg(image, format='rgb', quality=100).numpy()
+      return _png_to_jpeg
+
+  def cmyk_to_rgb(self, image_data):
+
+      i
