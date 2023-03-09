@@ -104,4 +104,10 @@ def _is_cmyk(filename):
 
 
 class ImageCoder(object):
-  """Helper class that provides TensorFlow
+  """Helper class that provides TensorFlow image coding utilities."""
+
+  def __init__(self):
+      return
+
+  def png_to_jpeg(self, image_data):
+      image = tf.image.decode_png(image_data, ch
