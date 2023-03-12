@@ -116,4 +116,6 @@ class ImageCoder(object):
 
   def cmyk_to_rgb(self, image_data):
 
-      i
+      image = tf.image.decode_jpeg(image_data, channels=0)
+      _cmyk_to_rgb = tf.image.encode_jpeg(image, format='rgb', quality=100).numpy()
+      return _cmyk_to_rgb
