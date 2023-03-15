@@ -119,3 +119,8 @@ class ImageCoder(object):
       image = tf.image.decode_jpeg(image_data, channels=0)
       _cmyk_to_rgb = tf.image.encode_jpeg(image, format='rgb', quality=100).numpy()
       return _cmyk_to_rgb
+
+  def decode_jpeg(self, image_data):
+      _decode_jpeg = tf.image.decode_jpeg(image_data, channels=3)
+      assert len(_decode_jpeg.shape) == 3
+      ass
