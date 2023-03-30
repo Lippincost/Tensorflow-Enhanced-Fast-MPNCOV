@@ -157,4 +157,12 @@ def _process_image(filename, coder):
   image = coder.decode_jpeg(image_data)
 
   # Check that image converted to RGB
-  asser
+  assert len(image.shape) == 3
+  height = image.shape[0]
+  width = image.shape[1]
+  assert image.shape[2] == 3
+
+  return image_data, height, width
+
+
+def _process_image_files_batch
