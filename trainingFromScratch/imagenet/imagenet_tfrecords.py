@@ -165,4 +165,9 @@ def _process_image(filename, coder):
   return image_data, height, width
 
 
-def _process_image_files_batch
+def _process_image_files_batch(coder, output_file, filenames, labels):
+  """Processes and saves list of images as TFRecords.
+
+  Args:
+    coder: instance of ImageCoder to provide TensorFlow image coding utils.
+ 
