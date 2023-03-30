@@ -150,4 +150,11 @@ def _process_image(filename, coder):
   elif _is_cmyk(filename):
     # 22 JPEG images are in CMYK colorspace.
     # tf.logging.info('Converting CMYK to RGB for %s' % filename)
- 
+    image_data = coder.cmyk_to_rgb(image_data)
+
+
+  # Decode the RGB JPEG.
+  image = coder.decode_jpeg(image_data)
+
+  # Check that image converted to RGB
+  asser
