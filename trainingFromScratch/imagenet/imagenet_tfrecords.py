@@ -140,4 +140,10 @@ def _process_image(filename, coder):
   """
   # Read the image file.
   with tf.io.gfile.GFile(filename, 'rb') as f:
-    image_data =
+    image_data = f.read()
+
+  # Clean the dirty data.
+  if _is_png(filename):
+    # 1 image is a PNG.
+    # tf.logging.info('Converting PNG to JPEG for %s' % filename)
+    image_data 
