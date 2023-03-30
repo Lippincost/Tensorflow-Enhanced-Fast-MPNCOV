@@ -146,4 +146,8 @@ def _process_image(filename, coder):
   if _is_png(filename):
     # 1 image is a PNG.
     # tf.logging.info('Converting PNG to JPEG for %s' % filename)
-    image_data 
+    image_data = coder.png_to_jpeg(image_data)
+  elif _is_cmyk(filename):
+    # 22 JPEG images are in CMYK colorspace.
+    # tf.logging.info('Converting CMYK to RGB for %s' % filename)
+ 
