@@ -170,4 +170,8 @@ def _process_image_files_batch(coder, output_file, filenames, labels):
 
   Args:
     coder: instance of ImageCoder to provide TensorFlow image coding utils.
- 
+    output_file: string, unique identifier specifying the data set
+    filenames: list of strings; each string is a path to an image file
+    labels: labels
+  """
+  write
