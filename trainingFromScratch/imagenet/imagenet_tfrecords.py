@@ -135,4 +135,9 @@ def _process_image(filename, coder):
     coder: instance of ImageCoder to provide TensorFlow image coding utils.
   Returns:
     image_buffer: string, JPEG encoding of RGB image.
-    he
+    height: integer, image height in pixels.
+    width: integer, image width in pixels.
+  """
+  # Read the image file.
+  with tf.io.gfile.GFile(filename, 'rb') as f:
+    image_data =
