@@ -123,4 +123,12 @@ class ImageCoder(object):
   def decode_jpeg(self, image_data):
       _decode_jpeg = tf.image.decode_jpeg(image_data, channels=3)
       assert len(_decode_jpeg.shape) == 3
-      ass
+      assert _decode_jpeg.shape[2] == 3
+      return _decode_jpeg
+
+
+def _process_image(filename, coder):
+  """Process a single image file.
+
+  Args:
+    filename: string, path to an image file e.g., '/p
