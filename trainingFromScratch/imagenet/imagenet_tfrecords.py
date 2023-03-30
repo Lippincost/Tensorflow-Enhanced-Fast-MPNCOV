@@ -131,4 +131,8 @@ def _process_image(filename, coder):
   """Process a single image file.
 
   Args:
-    filename: string, path to an image file e.g., '/p
+    filename: string, path to an image file e.g., '/path/to/example.JPG'.
+    coder: instance of ImageCoder to provide TensorFlow image coding utils.
+  Returns:
+    image_buffer: string, JPEG encoding of RGB image.
+    he
