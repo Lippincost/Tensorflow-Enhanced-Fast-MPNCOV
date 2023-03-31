@@ -174,4 +174,9 @@ def _process_image_files_batch(coder, output_file, filenames, labels):
     filenames: list of strings; each string is a path to an image file
     labels: labels
   """
-  write
+  writer = tf.io.TFRecordWriter(output_file)
+
+  for i in range(len(filenames)):
+    filename = filenames[i]
+    label = labels[i]
+    image_buffer, height, width = _process_image(filena
