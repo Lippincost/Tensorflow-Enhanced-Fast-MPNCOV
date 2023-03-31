@@ -179,4 +179,11 @@ def _process_image_files_batch(coder, output_file, filenames, labels):
   for i in range(len(filenames)):
     filename = filenames[i]
     label = labels[i]
-    image_buffer, height, width = _process_image(filena
+    image_buffer, height, width = _process_image(filename, coder)
+    example = _convert_to_example(filename, image_buffer, label, height, width)
+    writer.write(example.SerializeToString())
+
+  writer.close()
+
+
+def _pro
