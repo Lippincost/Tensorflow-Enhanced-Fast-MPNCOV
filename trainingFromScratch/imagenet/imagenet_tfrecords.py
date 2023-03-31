@@ -186,4 +186,8 @@ def _process_image_files_batch(coder, output_file, filenames, labels):
   writer.close()
 
 
-def _pro
+def _process_dataset(filenames, labels, output_directory, prefix, num_shards):
+  """Processes and saves list of images as TFRecords.
+
+  Args:
+    filenames: list of strings; each string is a path 
