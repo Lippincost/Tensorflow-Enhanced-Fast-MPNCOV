@@ -190,4 +190,8 @@ def _process_dataset(filenames, labels, output_directory, prefix, num_shards):
   """Processes and saves list of images as TFRecords.
 
   Args:
-    filenames: list of strings; each string is a path 
+    filenames: list of strings; each string is a path to an image file
+    labels: labels
+    output_directory: path where output files should be created
+    prefix: string; prefix for each file
+    num_shards: number of chucks to split the file
