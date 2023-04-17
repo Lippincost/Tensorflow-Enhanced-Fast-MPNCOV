@@ -206,4 +206,7 @@ def _process_dataset(filenames, labels, output_directory, prefix, num_shards):
   files = []
 
   for shard in range(num_shards):
-    chunk_files = filenames[shard * chunksize : (shard + 1) * c
+    chunk_files = filenames[shard * chunksize : (shard + 1) * chunksize]
+    chunk_labels = labels[shard * chunksize : (shard + 1) * chunksize]
+    output_file = os.path.join(
+        output_directory, '%s-%.5d-of-%.5d.tfrecords' % 
