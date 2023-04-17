@@ -194,4 +194,10 @@ def _process_dataset(filenames, labels, output_directory, prefix, num_shards):
     labels: labels
     output_directory: path where output files should be created
     prefix: string; prefix for each file
-    num_shards: number of chucks to split the file
+    num_shards: number of chucks to split the filenames into
+
+  Returns:
+    files: list of tf-record filepaths created from processing the dataset.
+  """
+  _check_or_create_dir(output_directory)
+  chunksize = int(m
