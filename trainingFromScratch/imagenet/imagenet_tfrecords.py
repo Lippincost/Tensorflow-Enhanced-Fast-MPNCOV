@@ -200,4 +200,10 @@ def _process_dataset(filenames, labels, output_directory, prefix, num_shards):
     files: list of tf-record filepaths created from processing the dataset.
   """
   _check_or_create_dir(output_directory)
-  chunksize = int(m
+  chunksize = int(math.ceil(len(filenames) / num_shards))
+  coder = ImageCoder()
+
+  files = []
+
+  for shard in range(num_shards):
+    chunk_files = filenames[shard * chunksize : (shard + 1) * c
