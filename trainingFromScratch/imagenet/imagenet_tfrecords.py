@@ -209,4 +209,6 @@ def _process_dataset(filenames, labels, output_directory, prefix, num_shards):
     chunk_files = filenames[shard * chunksize : (shard + 1) * chunksize]
     chunk_labels = labels[shard * chunksize : (shard + 1) * chunksize]
     output_file = os.path.join(
-        output_directory, '%s-%.5d-of-%.5d.tfrecords' % 
+        output_directory, '%s-%.5d-of-%.5d.tfrecords' % (prefix, shard, num_shards))
+    _process_image_files_batch(coder, output_file, chunk_files, chunk_labels)
+    # tf.logging.info('Finished writing file: %s' % out
