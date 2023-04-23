@@ -211,4 +211,12 @@ def _process_dataset(filenames, labels, output_directory, prefix, num_shards):
     output_file = os.path.join(
         output_directory, '%s-%.5d-of-%.5d.tfrecords' % (prefix, shard, num_shards))
     _process_image_files_batch(coder, output_file, chunk_files, chunk_labels)
-    # tf.logging.info('Finished writing file: %s' % out
+    # tf.logging.info('Finished writing file: %s' % output_file)
+    files.append(output_file)
+  return files
+
+
+def convert_to_tf_records(raw_data_dir):
+    """Convert the dataset into TF-Record dumps."""
+
+    # Gl
