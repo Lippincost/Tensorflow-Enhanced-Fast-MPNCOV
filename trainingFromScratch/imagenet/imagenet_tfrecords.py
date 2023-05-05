@@ -219,4 +219,9 @@ def _process_dataset(filenames, labels, output_directory, prefix, num_shards):
 def convert_to_tf_records(raw_data_dir):
     """Convert the dataset into TF-Record dumps."""
 
-    # Gl
+    # Glob all the training files
+    training_files = []
+    training_labels = []
+    train_dir = os.path.join(raw_data_dir, 'train')
+    train_species = sorted(os.listdir(train_dir))
+    for i 
