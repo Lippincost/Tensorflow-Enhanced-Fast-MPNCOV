@@ -224,4 +224,8 @@ def convert_to_tf_records(raw_data_dir):
     training_labels = []
     train_dir = os.path.join(raw_data_dir, 'train')
     train_species = sorted(os.listdir(train_dir))
-    for i 
+    for i in range(len(train_species)):
+        s_dir = os.path.join(train_dir, train_species[i])
+        # 遍历目录下的所有图片
+        for filename in os.listdir(s_dir):
+         
