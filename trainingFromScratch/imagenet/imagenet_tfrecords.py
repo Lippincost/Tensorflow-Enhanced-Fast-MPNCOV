@@ -228,4 +228,8 @@ def convert_to_tf_records(raw_data_dir):
         s_dir = os.path.join(train_dir, train_species[i])
         # 遍历目录下的所有图片
         for filename in os.listdir(s_dir):
-         
+            # 获取文件的路径
+            training_files.append(os.path.join(s_dir, filename))
+            training_labels.append(int(i+1))
+
+    # Shuffle training records to ensure we are 
