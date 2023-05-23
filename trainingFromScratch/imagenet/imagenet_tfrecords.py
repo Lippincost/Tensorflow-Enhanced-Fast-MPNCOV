@@ -232,4 +232,7 @@ def convert_to_tf_records(raw_data_dir):
             training_files.append(os.path.join(s_dir, filename))
             training_labels.append(int(i+1))
 
-    # Shuffle training records to ensure we are 
+    # Shuffle training records to ensure we are distributing classes
+    # across the batches.
+    training_shuffle_idx = list(zip(training_files, training_labels))
+    random.shuffle(traini
