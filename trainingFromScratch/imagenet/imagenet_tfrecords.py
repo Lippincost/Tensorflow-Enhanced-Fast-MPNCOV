@@ -235,4 +235,9 @@ def convert_to_tf_records(raw_data_dir):
     # Shuffle training records to ensure we are distributing classes
     # across the batches.
     training_shuffle_idx = list(zip(training_files, training_labels))
-    random.shuffle(traini
+    random.shuffle(training_shuffle_idx)
+    training_files, training_labels = zip(*training_shuffle_idx)
+
+    # Glob all the validation files
+    validation_files = []
+    validation_lab
