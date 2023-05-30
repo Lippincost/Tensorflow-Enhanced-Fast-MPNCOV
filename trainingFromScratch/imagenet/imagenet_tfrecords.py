@@ -240,4 +240,8 @@ def convert_to_tf_records(raw_data_dir):
 
     # Glob all the validation files
     validation_files = []
-    validation_lab
+    validation_labels = []
+    val_dir = os.path.join(raw_data_dir, 'val')
+    val_species = sorted(os.listdir(val_dir))
+    for i in range(len(val_species)):
+        s_dir = os.path.jo
