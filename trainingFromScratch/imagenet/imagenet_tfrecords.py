@@ -244,4 +244,8 @@ def convert_to_tf_records(raw_data_dir):
     val_dir = os.path.join(raw_data_dir, 'val')
     val_species = sorted(os.listdir(val_dir))
     for i in range(len(val_species)):
-        s_dir = os.path.jo
+        s_dir = os.path.join(val_dir, val_species[i])
+        # 遍历目录下的所有图片
+        for filename in os.listdir(s_dir):
+            # 获取文件的路径
+            validation_files.append(os.path
