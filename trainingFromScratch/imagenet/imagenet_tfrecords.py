@@ -262,4 +262,12 @@ def convert_to_tf_records(raw_data_dir):
     # tf.logging.info('Processing the validation data.')
     validation_records = _process_dataset(
         validation_files, validation_labels,
-        os.pat
+        os.path.join(raw_data_dir, 'tfrecords'),
+        VALIDATION_DIRECTORY, VALIDATION_SHARDS)
+
+    return training_records, validation_records
+
+
+if __name__ == '__main__':
+    global args
+    ar
