@@ -270,4 +270,5 @@ def convert_to_tf_records(raw_data_dir):
 
 if __name__ == '__main__':
     global args
-    ar
+    args = parser.parse_args()
+    convert_to_tf_records(args.dataset)
