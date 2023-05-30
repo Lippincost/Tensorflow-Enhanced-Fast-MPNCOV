@@ -253,4 +253,7 @@ def convert_to_tf_records(raw_data_dir):
 
     # Create training data
     # tf.logging.info('Processing the training data.')
-    t
+    training_records = _process_dataset(
+        training_files, training_labels,
+        os.path.join(raw_data_dir, 'tfrecords'),
+        TRAINING_DIRECTORY, TRAINING_S
