@@ -248,4 +248,9 @@ def convert_to_tf_records(raw_data_dir):
         # 遍历目录下的所有图片
         for filename in os.listdir(s_dir):
             # 获取文件的路径
-            validation_files.append(os.path
+            validation_files.append(os.path.join(s_dir, filename))
+            validation_labels.append(int(i + 1))
+
+    # Create training data
+    # tf.logging.info('Processing the training data.')
+    t
