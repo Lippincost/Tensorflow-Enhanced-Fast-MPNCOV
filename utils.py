@@ -25,4 +25,8 @@ class AverageMeter(object):
 
 def plot_curve(stats, path, iserr):
     """plot curve of loss and accuracy"""
-    train_loss = 
+    train_loss = np.array(stats['train']['loss'])
+    test_loss = np.array(stats['val']['loss'])
+    if iserr:
+        trainTop1 = 100 - np.array(stats['train']['top1'])
+        trainTop
