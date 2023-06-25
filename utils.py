@@ -19,3 +19,10 @@ class AverageMeter(object):
         self.val = val
         self.sum += val * n
         self.count += n
+        self.avg = self.sum / self.count
+
+
+
+def plot_curve(stats, path, iserr):
+    """plot curve of loss and accuracy"""
+    train_loss = 
