@@ -49,4 +49,8 @@ def plot_curve(stats, path, iserr):
     handles, labels = obj.get_legend_handles_labels()
     obj.legend(handles[::-1], labels[::-1])
     top1 = plt.subplot(1, 3, 2)
-    top1.pl
+    top1.plot(range(1, epoch + 1), trainTop1, 'o-', label='train')
+    top1.plot(range(1, epoch + 1), valTop1, 'o-', label='val')
+    plt.title('top1' + titleName)
+    plt.xlabel('epoch')
+  
