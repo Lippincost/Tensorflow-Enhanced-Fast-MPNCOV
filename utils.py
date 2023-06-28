@@ -36,4 +36,9 @@ def plot_curve(stats, path, iserr):
     else:
         trainTop1 = np.array(stats['train']['top1'])
         trainTop5 = np.array(stats['train']['top5'])
-        valTop1 = np.ar
+        valTop1 = np.array(stats['val']['top1'])
+        valTop5 = np.array(stats['val']['top5'])
+        titleName = 'accuracy'
+    epoch = len(train_loss)
+    figure = plt.figure()
+    obj = plt.subplot(1, 3,
