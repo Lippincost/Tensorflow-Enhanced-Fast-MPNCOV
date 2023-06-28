@@ -41,4 +41,8 @@ def plot_curve(stats, path, iserr):
         titleName = 'accuracy'
     epoch = len(train_loss)
     figure = plt.figure()
-    obj = plt.subplot(1, 3,
+    obj = plt.subplot(1, 3, 1)
+    obj.plot(range(1, epoch + 1), train_loss, 'o-', label='train')
+    obj.plot(range(1, epoch + 1), test_loss, 'o-', label='val')
+    plt.xlabel('epoch')
+    plt.title('obj
