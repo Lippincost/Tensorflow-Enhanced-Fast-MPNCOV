@@ -31,4 +31,9 @@ def plot_curve(stats, path, iserr):
         trainTop1 = 100 - np.array(stats['train']['top1'])
         trainTop5 = 100 - np.array(stats['train']['top5'])
         valTop1 = 100 - np.array(stats['val']['top1'])
-        valTop5 = 100 - np.array(stats['val']['top5'
+        valTop5 = 100 - np.array(stats['val']['top5'])
+        titleName = 'error'
+    else:
+        trainTop1 = np.array(stats['train']['top1'])
+        trainTop5 = np.array(stats['train']['top5'])
+        valTop1 = np.ar
