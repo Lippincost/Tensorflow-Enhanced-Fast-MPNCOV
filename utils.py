@@ -29,4 +29,6 @@ def plot_curve(stats, path, iserr):
     test_loss = np.array(stats['val']['loss'])
     if iserr:
         trainTop1 = 100 - np.array(stats['train']['top1'])
-        trainTop
+        trainTop5 = 100 - np.array(stats['train']['top5'])
+        valTop1 = 100 - np.array(stats['val']['top1'])
+        valTop5 = 100 - np.array(stats['val']['top5'
