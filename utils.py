@@ -60,4 +60,11 @@ def plot_curve(stats, path, iserr):
     top5.plot(range(1, epoch + 1), valTop5, 'o-', label='val')
     plt.title('top5' + titleName)
     plt.xlabel('epoch')
-    handles, labels = top5.get_legend_handl
+    handles, labels = top5.get_legend_handles_labels()
+    top5.legend(handles[::-1], labels[::-1])
+    filename = os.path.join(path, 'net-train.pdf')
+    figure.savefig(filename, bbox_inches='tight')
+
+
+class Logger(object):
+  def __i
