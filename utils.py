@@ -67,4 +67,9 @@ def plot_curve(stats, path, iserr):
 
 
 class Logger(object):
-  def __i
+  def __init__(self, filename="Default.log"):
+    self.terminal = sys.stdout
+    self.log = open(filename, "a")
+  def write(self, message):
+    self.terminal.write(message)
+    self.log.write
