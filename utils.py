@@ -78,3 +78,6 @@ class Logger(object):
 # path = os.path.abspath(os.path.dirname(__file__))
 # type = sys.getfilesystemencoding()
 # sys.stdout = Logger('a.txt')
+# print(path)
+# print(os.path.dirname(__file__))
+# print('------------------')
