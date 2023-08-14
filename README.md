@@ -5,4 +5,5 @@
 This repository contains the source code using the TensorFlow2.0 framework and models trained on ImageNet 2012 dataset from the following paper:<br>
 ```
 @InProceedings{Li_2018_CVPR,
-   
+           author = {Li, Peihua and Xie, Jiangtao and Wang, Qilong and Gao, Zilin},
+           title = {Towards Faster Training of Global Covariance Pooling Networks by Iterative M
