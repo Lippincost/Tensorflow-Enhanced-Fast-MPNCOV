@@ -10,4 +10,7 @@ This repository contains the source code using the TensorFlow2.0 framework and m
            booktitle = { IEEE Int. Conf. on Computer Vision and Pattern Recognition (CVPR)},
            month = {June},
            year = {2018}
-   
+     }
+```
+The repository is transferred from the original author XuChunqiao to the current owner Lippincost.
+It concerns an iterative matrix square root normalization network 
