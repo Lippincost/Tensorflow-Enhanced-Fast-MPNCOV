@@ -13,4 +13,4 @@ This repository contains the source code using the TensorFlow2.0 framework and m
      }
 ```
 The repository is transferred from the original author XuChunqiao to the current owner Lippincost.
-It concerns an iterative matrix square root normalization network 
+It concerns an iterative matrix square root normalization network (called fast MPN-COV), which is very efficient and fit for large-scale datasets, compared to its predecessor ([MPN-COV](https://github.com/jiangtaoxie/
