@@ -13,4 +13,8 @@ This repository contains the source code using the TensorFlow2.0 framework and m
      }
 ```
 The repository is transferred from the original author XuChunqiao to the current owner Lippincost.
-It concerns an iterative matrix square root normalization network (called fast MPN-COV), which is very efficient and fit for large-scale datasets, compared to its predecessor ([MPN-COV](https://github.com/jiangtaoxie/MPN-COV)). It operates under the Tensorflow2.0 package, with the source code, models trained on the ImageNet 2012 dataset, and results released freely to the co
+It concerns an iterative matrix square root normalization network (called fast MPN-COV), which is very efficient and fit for large-scale datasets, compared to its predecessor ([MPN-COV](https://github.com/jiangtaoxie/MPN-COV)). It operates under the Tensorflow2.0 package, with the source code, models trained on the ImageNet 2012 dataset, and results released freely to the community.
+
+## Installation and Usage
+1. Install [Tensorflow (2.0.0b0)](https://tensorflow.google.cn/install)
+2. type ```git clone https://github.com/Lippincost/Tensorf
