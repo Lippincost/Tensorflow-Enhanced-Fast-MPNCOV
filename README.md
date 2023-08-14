@@ -6,4 +6,8 @@ This repository contains the source code using the TensorFlow2.0 framework and m
 ```
 @InProceedings{Li_2018_CVPR,
            author = {Li, Peihua and Xie, Jiangtao and Wang, Qilong and Gao, Zilin},
-           title = {Towards Faster Training of Global Covariance Pooling Networks by Iterative M
+           title = {Towards Faster Training of Global Covariance Pooling Networks by Iterative Matrix Square Root Normalization},
+           booktitle = { IEEE Int. Conf. on Computer Vision and Pattern Recognition (CVPR)},
+           month = {June},
+           year = {2018}
+   
