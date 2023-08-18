@@ -17,4 +17,6 @@ It concerns an iterative matrix square root normalization network (called fast M
 
 ## Installation and Usage
 1. Install [Tensorflow (2.0.0b0)](https://tensorflow.google.cn/install)
-2. type ```git clone https://github.com/Lippincost/Tensorf
+2. type ```git clone https://github.com/Lippincost/Tensorflow-Enhanced-Fast-MPNCOV ```
+3. Prepare the dataset as the instructions presented.
+Follow the instructions in the original readme content to reproduce the results and conduct f
