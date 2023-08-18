@@ -19,4 +19,8 @@ It concerns an iterative matrix square root normalization network (called fast M
 1. Install [Tensorflow (2.0.0b0)](https://tensorflow.google.cn/install)
 2. type ```git clone https://github.com/Lippincost/Tensorflow-Enhanced-Fast-MPNCOV ```
 3. Prepare the dataset as the instructions presented.
-Follow the instructions in the original readme content to reproduce the results and conduct f
+Follow the instructions in the original readme content to reproduce the results and conduct further research based on this work.
+
+## Other Implementations
+* [MatConvNet Implementation](https://github.com/jiangtaoxie/matconvnet.fast-mpn-cov)
+* [PyTorch Implementation](h
