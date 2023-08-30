@@ -23,4 +23,5 @@ Follow the instructions in the original readme content to reproduce the results 
 
 ## Other Implementations
 * [MatConvNet Implementation](https://github.com/jiangtaoxie/matconvnet.fast-mpn-cov)
-* [PyTorch Implementation](h
+* [PyTorch Implementation](https://github.com/jiangtaoxie/fast-MPN-COV)
+Note: This repository doesn't hold any rights to the images and is only meant for the benefit of the Tensorflow's opensource community.
